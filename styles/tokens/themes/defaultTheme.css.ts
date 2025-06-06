@@ -13,16 +13,21 @@ export const defaultTheme = createTheme(vars, {
     focusRing: '#0f172a',
     slate900: '#0f172a',
     slate800: '#1e293b',
+    slate600: '#475569',
     slate400: '#94a3b8',
+    slate100: '#f1f5f9',
+    slate50: '#f8fafc',
+    slate700: '#1e293b',
   },
   spacing: {
     small: '0.5rem',
     medium: '0.75rem',
     large: '1rem',
-    xl: '1.5rem',
-    '2xl': '2rem',
-    '4xl': '2.5rem',
-    '5xl': '3rem',
+    xl: '2rem',
+    '2xl': '3rem',
+    '3xl': '4rem',
+    '4xl': '5rem',
+    '5xl': '6rem',
   },
   font: {
     body: 'Noto Sans JP, sans-serif',
@@ -43,5 +48,9 @@ export const defaultTheme = createTheme(vars, {
   },
   radius: {
     md: '8px',
+    xl: '1rem',
+  },
+  shadow: {
+    card: '0 4px 14px rgba(0, 0, 0, 0.05)',
   },
 });

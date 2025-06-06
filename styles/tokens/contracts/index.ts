@@ -5,6 +5,7 @@ import { fontVars } from './font';
 import { fontSizeVars } from './fontSize';
 import { fontWeightVars } from './fontWeight';
 import { radiusVars } from './radius';
+import { shadowVars } from './shadow';
 
 export const vars = createThemeContract({
   color: colorVars,
@@ -13,4 +14,5 @@ export const vars = createThemeContract({
   fontSize: fontSizeVars,
   fontWeight: fontWeightVars,
   radius: radiusVars,
+  shadow: shadowVars
 });
