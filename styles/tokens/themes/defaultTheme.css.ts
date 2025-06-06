@@ -1,5 +1,5 @@
 import { createTheme } from '@vanilla-extract/css';
-import { vars } from './tokens/vars.css';
+import { vars } from '../contracts';
 
 export const defaultTheme = createTheme(vars, {
   color: {
@@ -28,9 +28,6 @@ export const defaultTheme = createTheme(vars, {
     body: 'Noto Sans JP, sans-serif',
     heading: 'Noto Serif JP, serif',
   },
-  radius: {
-    md: '8px',
-  },
   fontSize: {
     sm: '0.875rem',
     md: '1rem',
@@ -43,5 +40,8 @@ export const defaultTheme = createTheme(vars, {
     medium: '500',
     semibold: '600',
     bold: '700',
+  },
+  radius: {
+    md: '8px',
   },
 });

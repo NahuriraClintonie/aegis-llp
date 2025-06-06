@@ -1,5 +1,5 @@
 import { style, styleVariants } from '@vanilla-extract/css';
-import { vars } from '@/styles/tokens/vars.css';
+import { vars } from '@/styles/tokens/index.css';
 
 export const footer = style({
   backgroundColor: vars.color.slate900,
