@@ -14,6 +14,7 @@ export const defaultTheme = createTheme(vars, {
     slate900: '#0f172a',
     slate800: '#1e293b',
     slate400: '#94a3b8',
+    slate600: '#475569',
   },
   spacing: {
     small: '0.5rem',
