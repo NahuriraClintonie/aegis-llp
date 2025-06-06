@@ -1,10 +1,13 @@
+## 📁 Project Structure: `aegis-llp`
+
+```plaintext
 aegis-llp/
 ├── app/                         # Next.js App Router pages
 │   ├── layout.tsx              # Root layout
 │   ├── page.tsx                # Top Page (Landing)
 │   ├── about/                  # /about page
 │   ├── companies/              # /companies listing
-│   ├── companies/[id]/         # /companies/[id] detail
+│   │   └── [id]/               # /companies/[id] detail
 │   ├── projects/               # Projects showcase
 │   ├── blog/                   # Blog & updates
 │   ├── news/                   # News & press
@@ -24,9 +27,9 @@ aegis-llp/
 │   └── blog/                   # Blog utilities
 │
 ├── styles/                     # Vanilla Extract styles
+│   ├── atoms/                  # Individual component styles
 │   ├── tokens/                 # Design tokens (colors, spacing, typography)
-│   ├── themes.css.ts          # Light/Dark or Default theme
-│   └── global.css.ts          # Global vanilla styles
+│   └── theme.css.ts            # Light/Dark or Default theme
 │
 ├── lib/                        # Utilities, API clients, constants
 │   ├── api.ts                  # API helper functions
@@ -41,3 +44,4 @@ aegis-llp/
 ├── .eslintrc.js                # ESLint config
 ├── tsconfig.json               # TypeScript config
 └── next.config.js              # Next.js config
+```
