@@ -9,6 +9,9 @@ export const colorVars = {
   focusRing: null,
   slate900: null,
   slate800: null,
+  slate700: null,
+  slate600: null,
   slate400: null,
-  slate600: null
+  slate100: null,
+  slate50: null,
 };
