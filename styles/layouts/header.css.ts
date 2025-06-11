@@ -1,5 +1,5 @@
 import { style, styleVariants } from '@vanilla-extract/css';
-import { vars } from '@/styles/tokens/contracts';
+import { vars } from '@/styles/tokens/contracts/index.css';
 
 export const headerRoot = style({
   backgroundColor: vars.color.white,

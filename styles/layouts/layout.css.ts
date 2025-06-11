@@ -1,5 +1,5 @@
 import { style } from '@vanilla-extract/css'
-import { vars } from '@/styles/tokens/contracts';
+import { vars } from '@/styles/tokens/contracts/index.css';
 
 export const body = style({
   minHeight: '100vh',
