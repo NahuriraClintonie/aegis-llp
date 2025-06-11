@@ -3,7 +3,7 @@ import { vars } from '../contracts/index.css';
 
 export const defaultTheme = createTheme(vars, {
   color: {
-    background: '#ffffff',
+    background: 'blue',
     text: '#1a1a1a',
     primary: '#0f172a',
     secondary: '#1e293b',
@@ -17,11 +17,10 @@ export const defaultTheme = createTheme(vars, {
     slate600: '#475569',
     slate500: '#64748b',
     slate400: '#94a3b8',
-    slate300:'',
+    slate300:'#cbd5e1',
     slate100: '#f1f5f9',
     slate50: '#f8fafc',
     gray50: '#f8fafc', 
-    gray900: '#0f172a',
   },
   spacing: {
     xs: '0.25rem',

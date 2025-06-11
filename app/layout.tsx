@@ -33,7 +33,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={notoSansJP.variable}>
-      <body className={layoutStyles.body}>
+      <body>
         <Header />
         <main>{children}</main>
         <Footer />
