@@ -16,6 +16,7 @@ export const colorVars = createGlobalTheme(':root', {
   slate600: '#475569',
   slate500: '#64748b',
   slate400: '#94a3b8',
+  slate300: '',
   slate100: '#f1f5f9',
   slate50: '#f8fafc',
   gray50: '#f9fafb',
