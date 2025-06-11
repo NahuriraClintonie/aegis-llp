@@ -4,26 +4,38 @@ import { vars } from '@/styles/tokens/contracts/index.css';
 export const footer = style({
   backgroundColor: vars.color.slate900,
   color: vars.color.white,
+  width: '100%',
+  bottom: 0,
+  left: 0,
+  right: 0,
+  overflowX: 'hidden',
+  zIndex: 100, 
 });
 
+
 export const container = style({
-  paddingTop: vars.spacing['4xl'],
-  paddingBottom: vars.spacing['4xl'],
+  maxWidth: '1250px',
+  margin: '0 auto',
+  padding: `0 ${vars.spacing.xs}`,
+  paddingTop: vars.spacing['xl'],
+  paddingBottom: vars.spacing['xl'],
+  boxSizing: 'border-box',
 });
 
 export const grid = style({
   display: 'grid',
-  gap: vars.spacing.xl,
+  gap: vars.spacing['3xl'],
   gridTemplateColumns: '1fr',
   '@media': {
     'screen and (min-width: 768px)': {
       gridTemplateColumns: 'repeat(2, 1fr)',
     },
     'screen and (min-width: 1024px)': {
-      gridTemplateColumns: 'repeat(4, 1fr)',
+      gridTemplateColumns: 'repeat(3, 1fr)',
     },
   },
 });
+
 
 export const brand = style({
   display: 'flex',
@@ -57,6 +69,7 @@ export const contactList = style({
 export const contactItem = style({
   display: 'flex',
   alignItems: 'center',
+  gap: vars.spacing.small,
   color: vars.color.slate400,
 });
 
@@ -70,7 +83,7 @@ export const navTitle = style({
   fontWeight: vars.fontWeight.semibold,
   textTransform: 'uppercase',
   letterSpacing: '0.05em',
-  marginBottom: vars.spacing.medium,
+  marginBottom: vars.spacing.small,
 });
 
 export const navItem = style({
@@ -86,14 +99,14 @@ export const navItem = style({
 
 export const bottomBar = style({
   borderTop: `1px solid ${vars.color.slate800}`,
-  marginTop: vars.spacing['5xl'],
+  marginTop: vars.spacing['3xl'],
   paddingTop: vars.spacing['2xl'],
 });
 
 export const bottomRow = style({
   display: 'flex',
   flexDirection: 'column',
-  gap: vars.spacing.large,
+  gap: vars.spacing.xs,
   alignItems: 'center',
   justifyContent: 'space-between',
   '@media': {
