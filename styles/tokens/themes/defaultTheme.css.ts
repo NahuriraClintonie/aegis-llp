@@ -3,7 +3,7 @@ import { vars } from '../contracts/index.css';
 
 export const defaultTheme = createTheme(vars, {
   color: {
-    background: 'blue',
+    background: '#fffff',
     text: '#1a1a1a',
     primary: '#0f172a',
     secondary: '#1e293b',
@@ -32,6 +32,7 @@ export const defaultTheme = createTheme(vars, {
     '3xl': '4rem',
     '4xl': '5rem',
     '5xl': '6rem',
+    '6xl': '6rem',
   },
   font: {
     body: 'Noto Sans JP, sans-serif',
