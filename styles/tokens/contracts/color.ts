@@ -15,4 +15,6 @@ export const colorVars = {
   slate500: null,
   slate100: null,
   slate50: null,
+  gray50: null,
+  gray900: null,
 };
