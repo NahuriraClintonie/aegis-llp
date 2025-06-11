@@ -1,13 +1,19 @@
-import { style, styleVariants } from '@vanilla-extract/css';
+import { style } from '@vanilla-extract/css';
 import { vars } from '@/styles/tokens/contracts/index.css';
 
 export const headerRoot = style({
-  backgroundColor: vars.color.white,
+  position: 'fixed',
+  top: 0,
+  left: 0,
+  right: 0,
+  zIndex: 1000, // Ensure it stays above everything
+  // backgroundColor: vars.color.white,
   padding: `${vars.spacing.medium} ${vars.spacing.large}`,
   borderBottom: `1px solid ${vars.color.border}`,
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'space-between',
+  width: '100%',
 });
 
 export const logo = style({
