@@ -21,7 +21,7 @@ export default function Footer() {
     <footer className={styles.footer}>
   <div className={styles.container}>
     <div className={styles.grid}>
-      <div className="lg:col-span-2">
+      <div className="lg:col-span-3">
         <div className={styles.brand}>
           <span className={styles.brandText}>AEGIS</span>
           <span className={styles.subText}>LLP</span>
