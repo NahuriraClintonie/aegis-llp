@@ -1,4 +1,5 @@
 export const spacingVars = {
+  xs: null,
   small: null,
   medium: null,
   large: null,
