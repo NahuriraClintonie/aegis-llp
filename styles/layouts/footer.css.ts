@@ -4,9 +4,14 @@ import { vars } from '@/styles/tokens/contracts/index.css';
 export const footer = style({
   backgroundColor: vars.color.slate900,
   color: vars.color.white,
+  width: '100%',
 });
 
 export const container = style({
+  maxWidth: '1280px',
+  margin: '0 auto',
+  paddingLeft: vars.spacing.large,
+  paddingRight: vars.spacing.large,
   paddingTop: vars.spacing['4xl'],
   paddingBottom: vars.spacing['4xl'],
 });
@@ -57,6 +62,7 @@ export const contactList = style({
 export const contactItem = style({
   display: 'flex',
   alignItems: 'center',
+  gap: vars.spacing.small,
   color: vars.color.slate400,
 });
 
