@@ -1,5 +1,5 @@
 import { createTheme } from '@vanilla-extract/css';
-import { vars } from '../contracts';
+import { vars } from '../contracts/index.css';
 
 export const defaultTheme = createTheme(vars, {
   color: {

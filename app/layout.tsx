@@ -1,7 +1,6 @@
 import type React from "react"
 import type { Metadata } from "next"
 import { Inter, Noto_Sans_JP } from "next/font/google"
-import "@/styles/globals.css"
 import Header from "@/components/layouts/Header"
 import Footer from "@/components/layouts/Footer"
 import * as layoutStyles from "@/styles/layouts/layout.css"
