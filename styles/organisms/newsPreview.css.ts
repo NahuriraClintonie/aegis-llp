@@ -2,120 +2,117 @@ import { style } from '@vanilla-extract/css';
 import { vars } from '@/styles/tokens/contracts/index.css';
 
 export const section = style({
-  backgroundColor: vars.color.slate50,
-  paddingTop: vars.spacing['4xl'],
-  paddingBottom: vars.spacing['4xl'],
-});
+  background: vars.color.slate300,
+  padding: '2rem 1rem',
+})
 
 export const container = style({
-  maxWidth: '1280px',
+  maxWidth: '72rem',
   margin: '0 auto',
-  padding: `0 ${vars.spacing.large}`,
-});
+  display: 'flex',
+  flexDirection: 'column',
+  gap: vars.spacing.medium,
+})
 
 export const header = style({
   display: 'flex',
   justifyContent: 'space-between',
   alignItems: 'center',
-  marginBottom: vars.spacing['3xl'],
   flexWrap: 'wrap',
-  gap: vars.spacing.large,
-});
+})
 
 export const heading = style({
-  fontSize: vars.fontSize['3xl'],
+  fontSize: vars.fontSize.xl,
   fontWeight: vars.fontWeight.bold,
-  color: vars.color.slate900,
-  marginBottom: vars.spacing.medium,
-});
+  color: vars.color.primary,
+  marginBottom: '0.5rem',
+})
 
 export const subheading = style({
-  fontSize: vars.fontSize.lg,
-  color: vars.color.slate600,
-});
+  fontSize: vars.fontSize.sm,
+  color: vars.color.secondary,
+})
 
 export const buttonDesktop = style({
   display: 'none',
   '@media': {
     'screen and (min-width: 768px)': {
-      display: 'inline-flex',
+      display: 'inline-block',
     },
   },
-});
+})
 
 export const buttonMobile = style({
+  display: 'block',
   textAlign: 'center',
-  marginTop: vars.spacing['2xl'],
   '@media': {
     'screen and (min-width: 768px)': {
       display: 'none',
     },
   },
-});
+})
 
 export const grid = style({
   display: 'grid',
+  gap: '2rem',
   gridTemplateColumns: '1fr',
-  gap: vars.spacing['2xl'],
   '@media': {
     'screen and (min-width: 768px)': {
-      gridTemplateColumns: 'repeat(3, 1fr)',
+      gridTemplateColumns: 'repeat(1, 1fr)',
     },
   },
-});
+})
 
 export const card = style({
-  backgroundColor: vars.color.white,
-  padding: vars.spacing['2xl'],
-  borderRadius: vars.radius.xl,
+  background: vars.color.white,
+  borderRadius: vars.radius.md,
+  padding: vars.spacing.large,
   boxShadow: vars.shadow.card,
-});
+  display: 'flex',
+  flexDirection: 'column',
+  gap: '1rem',
+})
 
 export const meta = style({
   display: 'flex',
   alignItems: 'center',
+  gap: '0.5rem',
+  color: vars.color.text,
   fontSize: vars.fontSize.sm,
-  color: vars.color.slate500,
-  marginBottom: vars.spacing.medium,
-});
+})
 
 export const icon = style({
-  height: '16px',
-  width: '16px',
-  marginRight: vars.spacing.xs,
-});
+  width: '1rem',
+  height: '1rem',
+})
 
 export const category = style({
-  backgroundColor: vars.color.slate100,
-  padding: `${vars.spacing.xs} ${vars.spacing.small}`,
-  borderRadius: vars.radius.xl,
-  fontSize: '0.75rem',
-  marginLeft: vars.spacing.small,
-});
+  backgroundColor: vars.color.background,
+  color: vars.color.text,
+  padding: '0.1rem 0.5rem',
+  borderRadius: vars.radius.md,
+  fontSize: vars.fontSize.sm,
+})
 
 export const title = style({
   fontSize: vars.fontSize.lg,
-  fontWeight: vars.fontWeight.semibold,
-  color: vars.color.slate900,
-  marginBottom: vars.spacing.small,
-  lineClamp: 2,
-});
+  fontWeight: vars.fontWeight.bold,
+  color: vars.color.text,
+})
 
 export const excerpt = style({
   fontSize: vars.fontSize.sm,
-  color: vars.color.slate600,
-  lineHeight: 1.6,
-  marginBottom: vars.spacing.medium,
-});
+  color: vars.color.text,
+})
 
 export const readMore = style({
   fontSize: vars.fontSize.sm,
-  color: vars.color.slate900,
   fontWeight: vars.fontWeight.medium,
-  transition: 'color 0.2s',
+  color: vars.color.primary,
+  textDecoration: 'none',
   selectors: {
     '&:hover': {
-      color: vars.color.slate600,
+      textDecoration: 'underline',
     },
   },
-});
+})

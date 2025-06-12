@@ -7,24 +7,24 @@ import * as styles from '@/styles/organisms/newsPreview.css'
 const news = [
   {
     id: 1,
-    title: 'AEGIS LLP Announces Strategic Partnership with Leading Tech Firms',
+    title: 'AEGIS合同会社、主要テック企業との戦略的提携を発表',
     date: '2024-01-15',
-    category: 'Partnership',
-    excerpt: 'New collaboration aims to accelerate digital transformation initiatives across member companies.',
+    category: '提携',
+    excerpt: '新たな連携により、会員企業のデジタルトランスフォーメーションを加速します。',
   },
   {
     id: 2,
-    title: 'Quarterly Innovation Summit Showcases Member Company Achievements',
+    title: '四半期イノベーションサミットで会員企業の成果を紹介',
     date: '2024-01-10',
-    category: 'Event',
-    excerpt: 'Annual gathering highlights breakthrough projects and collaborative successes.',
+    category: 'イベント',
+    excerpt: '年次イベントでは、画期的なプロジェクトと協業の成功事例が共有されました。',
   },
   {
     id: 3,
-    title: 'AEGIS LLP Expands Network with Three New Member Companies',
+    title: 'AEGIS合同会社、新たに3社の会員企業を迎えネットワークを拡大',
     date: '2024-01-05',
-    category: 'Growth',
-    excerpt: 'Strategic additions strengthen our capabilities in AI, sustainability, and design.',
+    category: '成長',
+    excerpt: 'AI、サステナビリティ、デザイン分野での強化を目指します。',
   },
 ]
 
@@ -34,13 +34,13 @@ export default function NewsPreview() {
       <div className={styles.container}>
         <div className={styles.header}>
           <div>
-            <h2 className={styles.heading}>Latest News</h2>
+            <h2 className={styles.heading}>📢 最新のお知らせ</h2>
             <p className={styles.subheading}>
-              Stay updated with our latest developments and achievements.
+              AEGISからの最新情報や活動内容をチェックしましょう。
             </p>
           </div>
           <Link href="/news" className={styles.buttonDesktop}>
-            <span className="btn-secondary">View All News</span>
+            <span className={styles.readMore}>すべてのお知らせを見る</span>
           </Link>
         </div>
 
@@ -48,9 +48,10 @@ export default function NewsPreview() {
           {news.map((item) => (
             <article key={item.id} className={styles.card}>
               <div className={styles.meta}>
+                <span role="img" aria-label="icon">🎌</span>
                 <Calendar className={styles.icon} />
                 <time dateTime={item.date}>
-                  {new Date(item.date).toLocaleDateString('en-US', {
+                  {new Date(item.date).toLocaleDateString('ja-JP', {
                     year: 'numeric',
                     month: 'long',
                     day: 'numeric',
@@ -62,7 +63,7 @@ export default function NewsPreview() {
               <h3 className={styles.title}>{item.title}</h3>
               <p className={styles.excerpt}>{item.excerpt}</p>
               <Link href={`/news/${item.id}`} className={styles.readMore}>
-                Read more →
+                続きを読む →
               </Link>
             </article>
           ))}
@@ -70,7 +71,7 @@ export default function NewsPreview() {
 
         <div className={styles.buttonMobile}>
           <Link href="/news">
-            <span className="btn-secondary">View All News</span>
+            <span className={styles.readMore}>すべてのお知らせを見る</span>
           </Link>
         </div>
       </div>
