@@ -1,8 +1,9 @@
+// NewsPreview.tsx
 'use client'
 
 import Link from 'next/link'
 import Image from 'next/image'
-import { Calendar } from 'lucide-react'
+import { ArrowRight, ArrowUpRight } from 'lucide-react'
 import * as styles from '@/styles/organisms/newsPreview.css'
 
 const news = [
@@ -36,57 +37,41 @@ export default function NewsPreview() {
   return (
     <section className={styles.section}>
       <div className={styles.container}>
-        <div className={styles.header}>
-          <div>
-            <h2 className={styles.heading}>📢 最新のお知らせ</h2>
-            <p className={styles.subheading}>
-              AEGISからの最新情報や活動内容をチェックしましょう。
-            </p>
-          </div>
-          <Link href="/news" className={styles.buttonDesktop}>
-            <span className={styles.readMore}>すべてのお知らせを見る</span>
-          </Link>
+        <div className={styles.leftSection}>
+          <h2 className={styles.latestHeading}>📢 AEGIS LATEST NEWS</h2>
+          <p className={styles.latestText}>
+            最新ニュースや注目のアナウンスメントを通じて、AEGISの成長と進展をご覧ください。
+          </p>
         </div>
 
-        <div className={styles.grid}>
+        <div className={styles.rightSection}>
           {news.map((item) => (
-            <article key={item.id} className={styles.card}>
-              <div className={styles.imageWrapper}>
-                <Image
-                  src={item.image}
-                  alt={item.title}
-                  fill
-                  style={{ objectFit: 'cover' }}
-                />
+            <article key={item.id} className={styles.newsCard}>
+            <div className={styles.cardContent}>
+              <div className={styles.cardMeta}>
+                <span className={styles.cardCategory}>{item.category}</span>
+                <span className={styles.separator}>|</span>
+                <time dateTime={item.date} className={styles.cardDate}>
+                  {new Date(item.date).toLocaleDateString('ja-JP', {
+                    year: 'numeric',
+                    month: 'short',
+                    day: 'numeric',
+                  })}
+                </time>
               </div>
-              <div className={styles.content}>
-                <div className={styles.meta}>
-                  <span role="img" aria-label="icon">🎌</span>
-                  <Calendar className={styles.icon} />
-                  <time dateTime={item.date}>
-                    {new Date(item.date).toLocaleDateString('ja-JP', {
-                      year: 'numeric',
-                      month: 'long',
-                      day: 'numeric',
-                    })}
-                  </time>
-                  <span style={{ margin: '0 0.5rem' }}>•</span>
-                  <span className={styles.category}>{item.category}</span>
-                </div>
-                <h3 className={styles.title}>{item.title}</h3>
-                <p className={styles.excerpt}>{item.excerpt}</p>
-                <Link href={`/news/${item.id}`} className={styles.readMore}>
-                  続きを読む →
-                </Link>
-              </div>
-            </article>
-          ))}
-        </div>
+              <p className={styles.cardExcerpt}>{item.excerpt}</p>
+            </div>
 
-        <div className={styles.buttonMobile}>
-          <Link href="/news">
-            <span className={styles.readMore}>すべてのお知らせを見る</span>
-          </Link>
+            <Link
+              href={`/news/${item.id}`}
+              className={styles.arrowLink}
+              aria-label="Read more"
+            >
+              <ArrowUpRight className={styles.arrowIcon} />
+            </Link>
+          </article>
+
+          ))}
         </div>
       </div>
     </section>
