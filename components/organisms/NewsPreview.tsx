@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { Calendar } from 'lucide-react'
 import * as styles from '@/styles/organisms/newsPreview.css'
 
@@ -11,6 +12,7 @@ const news = [
     date: '2024-01-15',
     category: '提携',
     excerpt: '新たな連携により、会員企業のデジタルトランスフォーメーションを加速します。',
+    image: '/partnership.jpg',
   },
   {
     id: 2,
@@ -18,6 +20,7 @@ const news = [
     date: '2024-01-10',
     category: 'イベント',
     excerpt: '年次イベントでは、画期的なプロジェクトと協業の成功事例が共有されました。',
+    image: '/new member companies.jpg',
   },
   {
     id: 3,
@@ -25,6 +28,7 @@ const news = [
     date: '2024-01-05',
     category: '成長',
     excerpt: 'AI、サステナビリティ、デザイン分野での強化を目指します。',
+    image: '/member projects.jpg',
   },
 ]
 
@@ -47,24 +51,34 @@ export default function NewsPreview() {
         <div className={styles.grid}>
           {news.map((item) => (
             <article key={item.id} className={styles.card}>
-              <div className={styles.meta}>
-                <span role="img" aria-label="icon">🎌</span>
-                <Calendar className={styles.icon} />
-                <time dateTime={item.date}>
-                  {new Date(item.date).toLocaleDateString('ja-JP', {
-                    year: 'numeric',
-                    month: 'long',
-                    day: 'numeric',
-                  })}
-                </time>
-                <span style={{ margin: '0 0.5rem' }}>•</span>
-                <span className={styles.category}>{item.category}</span>
+              <div className={styles.imageWrapper}>
+                <Image
+                  src={item.image}
+                  alt={item.title}
+                  fill
+                  style={{ objectFit: 'cover' }}
+                />
               </div>
-              <h3 className={styles.title}>{item.title}</h3>
-              <p className={styles.excerpt}>{item.excerpt}</p>
-              <Link href={`/news/${item.id}`} className={styles.readMore}>
-                続きを読む →
-              </Link>
+              <div className={styles.content}>
+                <div className={styles.meta}>
+                  <span role="img" aria-label="icon">🎌</span>
+                  <Calendar className={styles.icon} />
+                  <time dateTime={item.date}>
+                    {new Date(item.date).toLocaleDateString('ja-JP', {
+                      year: 'numeric',
+                      month: 'long',
+                      day: 'numeric',
+                    })}
+                  </time>
+                  <span style={{ margin: '0 0.5rem' }}>•</span>
+                  <span className={styles.category}>{item.category}</span>
+                </div>
+                <h3 className={styles.title}>{item.title}</h3>
+                <p className={styles.excerpt}>{item.excerpt}</p>
+                <Link href={`/news/${item.id}`} className={styles.readMore}>
+                  続きを読む →
+                </Link>
+              </div>
             </article>
           ))}
         </div>
