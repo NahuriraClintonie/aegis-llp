@@ -9,9 +9,9 @@ export default function JapanHero() {
     <section className={styles.hero}>
       <div className={styles.heroLeft}>
         {/* <div className={styles.logo}>AEGIS<span className={styles.vibes}> LLP</span></div> */}
-        <h1 className={styles.heroTitle}>プロフェッショナル・</h1>
-        <h1 className={styles.heroTitle}>パートナーシップ・</h1>
-        <h1 className={styles.heroTitle}>エクセレンス</h1>
+        <h1 className={styles.heroTitle}>プロフェッショナル</h1>
+        <h1 className={styles.heroTitle}>パートナーシップ</h1>
+        <h2 className={styles.heroTitle}>エクセレンス</h2>
         <p className={styles.heroDescription}>
             AEGIS LLPでは、信頼、イノベーション、そしてプロフェッショナリズムに根ざした強力なパートナーシップを築いています。世界中の産業を変革する卓越した企業のネットワークをご覧ください。
         </p>

@@ -36,7 +36,7 @@ export const vibes = style({
 export const heroTitle = style({
   fontSize: '4rem', // Custom size, not in vars
   fontWeight: vars.fontWeight.bold,
-  margin: `${vars.spacing.large} 0`,
+  margin: `0.3rem 0`,
   fontFamily: 'Orbitron, sans-serif', // Custom font, preserve
   letterSpacing: '1px',
 });
