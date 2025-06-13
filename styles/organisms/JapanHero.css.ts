@@ -3,11 +3,11 @@ import { vars } from '@/styles/tokens/index.css';
 
 export const hero = style({
   display: 'flex',
-  background: '#d4464a',
-  color: '#fff',
-  fontFamily: 'Segoe UI, sans-serif',
-  padding: '4rem 2rem',
-  borderRadius: '10px',
+  background: '#d4464a', // Not in vars, keep as is
+  color: vars.color.white,
+  fontFamily: vars.font.body,
+  padding: `${vars.spacing['4xl']} ${vars.spacing.large}`,
+  borderRadius: vars.radius.lg,
   overflow: 'hidden',
   height: '90vh',
 });
@@ -15,56 +15,55 @@ export const hero = style({
 export const heroLeft = style({
   flex: 1,
   background: vars.color.gray50,
-  color: '#000000',
-  padding: '3rem',
-  borderRadius: '10px 0 0 10px',
+  color: vars.color.text,
+  padding: vars.spacing['3xl'],
+  borderRadius: `${vars.radius.lg} 0 0 ${vars.radius.lg}`,
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'center',
 });
 
 export const logo = style({
-  fontWeight: 'bold',
-  fontSize: '1.5rem',
-  marginBottom: '1rem',
+  fontWeight: vars.fontWeight.bold,
+  fontSize: vars.fontSize['2xl'],
+  marginBottom: vars.spacing.large,
 });
 
 export const vibes = style({
-  fontWeight: 'normal',
+  fontWeight: vars.fontWeight.normal,
 });
 
 export const heroTitle = style({
-  fontSize: '4rem',
-  fontWeight: 'bold',
-  margin: '1rem 0',
-  fontFamily: 'Orbitron, sans-serif',
+  fontSize: '4rem', // Custom size, not in vars
+  fontWeight: vars.fontWeight.bold,
+  margin: `${vars.spacing.large} 0`,
+  fontFamily: 'Orbitron, sans-serif', // Custom font, preserve
   letterSpacing: '1px',
 });
 
 export const heroDescription = style({
-  fontSize: '0.9rem',
+  fontSize: vars.fontSize.sm,
   lineHeight: 1.6,
-  marginBottom: '1.5rem',
+  marginBottom: vars.spacing['2xl'],
 });
 
 export const learnBtn = style({
-  background: '#000',
-  color: 'white',
-  padding: '0.75rem 1.5rem',
+  background: vars.color.primary,
+  color: vars.color.white,
+  padding: `${vars.spacing.medium} ${vars.spacing['2xl']}`,
   border: 'none',
   borderRadius: '50px',
-  fontWeight: 'bold',
+  fontWeight: vars.fontWeight.bold,
   cursor: 'pointer',
-  marginBottom: '2rem',
+  marginBottom: vars.spacing['3xl'],
 });
 
 export const socialIcons = style({
   display: 'flex',
-  gap: '1rem',
-  marginTop: '1.5rem',
-  color: '#000',
-})
-
+  gap: vars.spacing.large,
+  marginTop: vars.spacing['2xl'],
+  color: vars.color.text,
+});
 
 export const icon = style({
   width: '1.5rem',
@@ -75,18 +74,16 @@ export const icon = style({
   },
 });
 
-// 🎌 Right section with new image background (fit perfectly)
 export const heroRight = style({
   flex: 1,
   position: 'relative',
-  borderRadius: '0 10px 10px 0',
+  borderRadius: `0 ${vars.radius.lg} ${vars.radius.lg} 0`,
   overflow: 'hidden',
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
 });
 
-// ⛰️ Background image strictly scoped to right section
 export const backgroundImage = style({
   position: 'absolute',
   inset: 0,
@@ -97,14 +94,13 @@ export const backgroundImage = style({
   zIndex: 0,
 });
 
-// ☀️ Sun with LLP inside
 export const sun = style({
   position: 'absolute',
   top: '10%',
   left: '30%',
   width: '200px',
   height: '200px',
-  background: '#b0272c',
+  background: '#b0272c', // Sun red color not in vars
   borderRadius: '50%',
   zIndex: 1,
   display: 'flex',
@@ -118,8 +114,8 @@ const pulse = keyframes({
 });
 
 export const sunText = style({
-  fontSize: '2.5rem',
-  color: '#fff',
-  fontWeight: 'bold',
+  fontSize: '2.5rem', // Custom size
+  color: vars.color.white,
+  fontWeight: vars.fontWeight.bold,
   animation: `${pulse} 2.5s ease-in-out infinite alternate`,
 });
