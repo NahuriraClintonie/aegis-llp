@@ -36,7 +36,7 @@ export default function RootLayout({
     <html lang="en" className={`${defaultTheme}`}>
       <body className={layoutStyles.body}>
         <Header />
-        <main style={{ paddingTop: '2rem' }}>{children}</main>
+        <main style={{ paddingTop: '3rem' }}>{children}</main>
         <Footer />
       </body>
     </html>

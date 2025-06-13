@@ -10,11 +10,14 @@ export const section = style({
 export const backgroundImage = style({
   position: 'absolute',
   inset: 0,
-  objectFit: 'cover',
-  objectPosition: 'center',
-  opacity: 0.1,
+  backgroundImage: 'url("/background 5.jpg")',
+  backgroundSize: 'cover',
+  backgroundPosition: 'center',
+  backgroundRepeat: 'no-repeat',
+  filter: 'brightness(0.1)',
   zIndex: 0,
 });
+
 
 export const container = style({
   position: 'relative',

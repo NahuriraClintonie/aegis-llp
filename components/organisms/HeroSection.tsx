@@ -7,13 +7,7 @@ import * as styles from '@/styles/organisms/hero.css';
 export default function HeroSection() {
   return (
     <section className={styles.section}>
-      <Image
-        src="/placeholder.svg?height=800&width=1920"
-        alt="Professional business environment"
-        fill
-        className={styles.backgroundImage}
-        priority
-      />
+      <div className={styles.backgroundImage}></div>
 
       <div className={styles.container}>
         <div className={styles.contentWrapper}>
