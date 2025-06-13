@@ -1,5 +1,5 @@
-// JapanHero.css.ts (Vanilla Extract CSS)
 import { style } from '@vanilla-extract/css';
+import { vars } from '@/styles/tokens/index.css';
 
 export const hero = style({
   display: 'flex',
@@ -14,8 +14,8 @@ export const hero = style({
 
 export const heroLeft = style({
   flex: 1,
-  background: '#fff',
-  color: '#b0272c',
+  background: vars.color.gray50,
+  color: '#000000',
   padding: '3rem',
   borderRadius: '10px 0 0 10px',
   display: 'flex',
@@ -53,7 +53,7 @@ export const heroDescription = style({
 });
 
 export const learnBtn = style({
-  background: '#b0272c',
+  background: '#000',
   color: 'white',
   padding: '0.75rem 1.5rem',
   border: 'none',
@@ -67,7 +67,7 @@ export const socialIcons = style({
   display: 'flex',
   gap: '1rem',
   marginTop: '1.5rem',
-  color: '#b0272c',
+  color: '#000',
 })
 
 export const heroRight = style({

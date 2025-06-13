@@ -2,30 +2,32 @@
 'use client';
 
 import * as styles from '@/styles/organisms/JapanHero.css'
+import { Twitter, Facebook, Instagram, Linkedin } from 'lucide-react';
 
 export default function JapanHero() {
   return (
     <section className={styles.hero}>
       <div className={styles.heroLeft}>
-        <div className={styles.logo}>AEGIS<span className={styles.vibes}> LLP</span></div>
-        <p className={styles.visitText}>... CONNECT WITH US</p>
-        <h1 className={styles.heroTitle}>EXCELLENCE</h1>
+        {/* <div className={styles.logo}>AEGIS<span className={styles.vibes}> LLP</span></div> */}
+        <h1 className={styles.heroTitle}>プロフェッショナル・</h1>
+        <h1 className={styles.heroTitle}>パートナーシップ・</h1>
+        <h1 className={styles.heroTitle}>エクセレンス</h1>
         <p className={styles.heroDescription}>
-            At AEGIS LLP, we build powerful partnerships rooted in trust, innovation, and professionalism. Explore a network of exceptional companies transforming industries across the globe.
+            AEGIS LLPでは、信頼、イノベーション、そしてプロフェッショナリズムに根ざした強力なパートナーシップを築いています。世界中の産業を変革する卓越した企業のネットワークをご覧ください。
         </p>
         <button className={styles.learnBtn}>LEARN MORE</button>
         <div className={styles.socialIcons}>
             <a href="https://x.com/aegisllp" target="_blank" rel="noopener noreferrer" aria-label="X">
-            <img src="/icons/x.svg" alt="X" className={styles.icon} />
+            <Twitter className={styles.icon} />
             </a>
             <a href="https://facebook.com/aegisllp" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-            <img src="/icons/facebook.svg" alt="Facebook" className={styles.icon} />
+            <Facebook className={styles.icon} />
             </a>
             <a href="https://instagram.com/aegisllp" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-            <img src="/icons/instagram.svg" alt="Instagram" className={styles.icon} />
+            <Instagram className={styles.icon} />
             </a>
             <a href="https://linkedin.com/company/aegisllp" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-            <img src="/icons/linkedin.svg" alt="LinkedIn" className={styles.icon} />
+            <Linkedin className={styles.icon} />
             </a>
         </div>
         </div>
