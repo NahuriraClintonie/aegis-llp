@@ -66,9 +66,9 @@ export const learnBtn = style({
 export const socialIcons = style({
   display: 'flex',
   gap: '1rem',
-  fontSize: '1.2rem',
+  marginTop: '1.5rem',
   color: '#b0272c',
-});
+})
 
 export const heroRight = style({
   flex: 1,
@@ -90,6 +90,15 @@ export const sun = style({
   background: '#b0272c',
   borderRadius: '50%',
   zIndex: 1,
+});
+
+export const icon = style({
+  width: '1.5rem',
+  height: '1.5rem',
+  transition: 'transform 0.2s ease-in-out',
+  ':hover': {
+    transform: 'scale(1.1)',
+  },
 });
 
 export const mountain = style({

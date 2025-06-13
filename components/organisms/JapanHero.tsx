@@ -7,19 +7,28 @@ export default function JapanHero() {
   return (
     <section className={styles.hero}>
       <div className={styles.heroLeft}>
-        <div className={styles.logo}>JAP<span className={styles.vibes}>-VIBES</span></div>
-        <p className={styles.visitText}>... VISIT</p>
-        <h1 className={styles.heroTitle}>JAPAN</h1>
+        <div className={styles.logo}>AEGIS<span className={styles.vibes}> LLP</span></div>
+        <p className={styles.visitText}>... CONNECT WITH US</p>
+        <h1 className={styles.heroTitle}>EXCELLENCE</h1>
         <p className={styles.heroDescription}>
-          Spend your magical day only in Japan because lot of things can be happen in this beautiful country. Get your trip advisor by the most experienced trip guide only on japvibes.com. Get your tickets now!
+            At AEGIS LLP, we build powerful partnerships rooted in trust, innovation, and professionalism. Explore a network of exceptional companies transforming industries across the globe.
         </p>
         <button className={styles.learnBtn}>LEARN MORE</button>
         <div className={styles.socialIcons}>
-          <span>🌐</span>
-          <span>🐦</span>
-          <span>📸</span>
+            <a href="https://x.com/aegisllp" target="_blank" rel="noopener noreferrer" aria-label="X">
+            <img src="/icons/x.svg" alt="X" className={styles.icon} />
+            </a>
+            <a href="https://facebook.com/aegisllp" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <img src="/icons/facebook.svg" alt="Facebook" className={styles.icon} />
+            </a>
+            <a href="https://instagram.com/aegisllp" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <img src="/icons/instagram.svg" alt="Instagram" className={styles.icon} />
+            </a>
+            <a href="https://linkedin.com/company/aegisllp" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <img src="/icons/linkedin.svg" alt="LinkedIn" className={styles.icon} />
+            </a>
         </div>
-      </div>
+        </div>
 
       <div className={styles.heroRight}>
         <div className={styles.sun}></div>
