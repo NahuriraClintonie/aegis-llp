@@ -1,4 +1,4 @@
-import { style } from '@vanilla-extract/css';
+import { keyframes, style } from '@vanilla-extract/css';
 import { vars } from '@/styles/tokens/index.css';
 
 export const hero = style({
@@ -33,11 +33,6 @@ export const vibes = style({
   fontWeight: 'normal',
 });
 
-export const visitText = style({
-  fontSize: '1rem',
-  margin: '0.5rem 0',
-});
-
 export const heroTitle = style({
   fontSize: '4rem',
   fontWeight: 'bold',
@@ -70,27 +65,6 @@ export const socialIcons = style({
   color: '#000',
 })
 
-export const heroRight = style({
-  flex: 1,
-  position: 'relative',
-  background: 'linear-gradient(135deg, #ffe5b4, #ffd1b2)',
-  borderRadius: '0 10px 10px 0',
-  overflow: 'hidden',
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-});
-
-export const sun = style({
-  position: 'absolute',
-  top: '10%',
-  left: '30%',
-  width: '200px',
-  height: '200px',
-  background: '#b0272c',
-  borderRadius: '50%',
-  zIndex: 1,
-});
 
 export const icon = style({
   width: '1.5rem',
@@ -101,33 +75,51 @@ export const icon = style({
   },
 });
 
-export const mountain = style({
-  position: 'absolute',
-  bottom: 0,
-  left: '20%',
-  width: '300px',
-  height: '150px',
-  background: '#7f73a1',
-  clipPath: 'polygon(0% 100%, 50% 0%, 100% 100%)',
-  zIndex: 2,
+// 🎌 Right section with new image background (fit perfectly)
+export const heroRight = style({
+  flex: 1,
+  position: 'relative',
+  borderRadius: '0 10px 10px 0',
+  overflow: 'hidden',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
 });
 
-export const gate = style({
+// ⛰️ Background image strictly scoped to right section
+export const backgroundImage = style({
   position: 'absolute',
-  bottom: 0,
-  left: '40%',
-  width: '100px',
-  height: '100px',
-  background: 'red',
-  borderBottom: '10px solid black',
-  zIndex: 3,
-  transform: 'translateY(20%)',
+  inset: 0,
+  backgroundImage: 'url("/aegis group 3.jpeg")',
+  backgroundSize: 'cover',
+  backgroundPosition: 'center',
+  backgroundRepeat: 'no-repeat',
+  zIndex: 0,
 });
 
-export const blossoms = style({
+// ☀️ Sun with LLP inside
+export const sun = style({
   position: 'absolute',
-  right: '10%',
-  top: '30%',
-  fontSize: '2rem',
-  zIndex: 4,
+  top: '10%',
+  left: '30%',
+  width: '200px',
+  height: '200px',
+  background: '#b0272c',
+  borderRadius: '50%',
+  zIndex: 1,
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+});
+
+const pulse = keyframes({
+  '0%': { transform: 'scale(0.95)', opacity: 0.7 },
+  '100%': { transform: 'scale(1.05)', opacity: 1 },
+});
+
+export const sunText = style({
+  fontSize: '2.5rem',
+  color: '#fff',
+  fontWeight: 'bold',
+  animation: `${pulse} 2.5s ease-in-out infinite alternate`,
 });

@@ -33,11 +33,12 @@ export default function JapanHero() {
         </div>
 
       <div className={styles.heroRight}>
-        <div className={styles.sun}></div>
-        <div className={styles.mountain}></div>
-        <div className={styles.gate}></div>
-        <div className={styles.blossoms}>🌸🌸🌸</div>
-      </div>
+        <div className={styles.backgroundImage}></div>
+
+        <div className={styles.sun}>
+            <span className={styles.sunText}>LLP</span>
+        </div>
+        </div>
     </section>
   );
 }
