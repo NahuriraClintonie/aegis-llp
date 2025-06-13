@@ -1,30 +1,35 @@
+// NewsPreview.tsx
 'use client'
 
 import Link from 'next/link'
-import { Calendar } from 'lucide-react'
+import Image from 'next/image'
+import { ArrowRight, ArrowUpRight } from 'lucide-react'
 import * as styles from '@/styles/organisms/newsPreview.css'
 
 const news = [
   {
     id: 1,
-    title: 'AEGIS LLP Announces Strategic Partnership with Leading Tech Firms',
+    title: 'AEGIS合同会社、主要テック企業との戦略的提携を発表',
     date: '2024-01-15',
-    category: 'Partnership',
-    excerpt: 'New collaboration aims to accelerate digital transformation initiatives across member companies.',
+    category: '提携',
+    excerpt: '新たな連携により、会員企業のデジタルトランスフォーメーションを加速します。',
+    image: '/partnership.jpg',
   },
   {
     id: 2,
-    title: 'Quarterly Innovation Summit Showcases Member Company Achievements',
+    title: '四半期イノベーションサミットで会員企業の成果を紹介',
     date: '2024-01-10',
-    category: 'Event',
-    excerpt: 'Annual gathering highlights breakthrough projects and collaborative successes.',
+    category: 'イベント',
+    excerpt: '年次イベントでは、画期的なプロジェクトと協業の成功事例が共有されました。',
+    image: '/new member companies.jpg',
   },
   {
     id: 3,
-    title: 'AEGIS LLP Expands Network with Three New Member Companies',
+    title: 'AEGIS合同会社、新たに3社の会員企業を迎えネットワークを拡大',
     date: '2024-01-05',
-    category: 'Growth',
-    excerpt: 'Strategic additions strengthen our capabilities in AI, sustainability, and design.',
+    category: '成長',
+    excerpt: 'AI、サステナビリティ、デザイン分野での強化を目指します。',
+    image: '/member projects.jpg',
   },
 ]
 
@@ -32,46 +37,41 @@ export default function NewsPreview() {
   return (
     <section className={styles.section}>
       <div className={styles.container}>
-        <div className={styles.header}>
-          <div>
-            <h2 className={styles.heading}>Latest News</h2>
-            <p className={styles.subheading}>
-              Stay updated with our latest developments and achievements.
-            </p>
-          </div>
-          <Link href="/news" className={styles.buttonDesktop}>
-            <span className="btn-secondary">View All News</span>
-          </Link>
+        <div className={styles.leftSection}>
+          <h2 className={styles.latestHeading}>📢 AEGIS LATEST NEWS</h2>
+          <p className={styles.latestText}>
+            最新ニュースや注目のアナウンスメントを通じて、AEGISの成長と進展をご覧ください。
+          </p>
         </div>
 
-        <div className={styles.grid}>
+        <div className={styles.rightSection}>
           {news.map((item) => (
-            <article key={item.id} className={styles.card}>
-              <div className={styles.meta}>
-                <Calendar className={styles.icon} />
-                <time dateTime={item.date}>
-                  {new Date(item.date).toLocaleDateString('en-US', {
+            <article key={item.id} className={styles.newsCard}>
+            <div className={styles.cardContent}>
+              <div className={styles.cardMeta}>
+                <span className={styles.cardCategory}>{item.category}</span>
+                <span className={styles.separator}>|</span>
+                <time dateTime={item.date} className={styles.cardDate}>
+                  {new Date(item.date).toLocaleDateString('ja-JP', {
                     year: 'numeric',
-                    month: 'long',
+                    month: 'short',
                     day: 'numeric',
                   })}
                 </time>
-                <span style={{ margin: '0 0.5rem' }}>•</span>
-                <span className={styles.category}>{item.category}</span>
               </div>
-              <h3 className={styles.title}>{item.title}</h3>
-              <p className={styles.excerpt}>{item.excerpt}</p>
-              <Link href={`/news/${item.id}`} className={styles.readMore}>
-                Read more →
-              </Link>
-            </article>
-          ))}
-        </div>
+              <p className={styles.cardExcerpt}>{item.excerpt}</p>
+            </div>
 
-        <div className={styles.buttonMobile}>
-          <Link href="/news">
-            <span className="btn-secondary">View All News</span>
-          </Link>
+            <Link
+              href={`/news/${item.id}`}
+              className={styles.arrowLink}
+              aria-label="Read more"
+            >
+              <ArrowUpRight className={styles.arrowIcon} />
+            </Link>
+          </article>
+
+          ))}
         </div>
       </div>
     </section>
