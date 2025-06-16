@@ -2,7 +2,7 @@ import { style } from '@vanilla-extract/css';
 
 export const section = style({
   // backgroundColor: '#fff',
-  backgroundColor: 'rgba(252, 248, 248, 0.8)',
+  backgroundColor: 'rgba(170, 165, 165, 0.8)',
   paddingTop: '3rem',
   paddingBottom: '3rem',
   paddingLeft: '4rem',
@@ -21,13 +21,13 @@ export const header = style({
 export const title = style({
   fontSize: '2rem',
   fontWeight: 'bold',
-  color: '#1a1a1a',
+  color: '#d4464a',
   marginBottom: '1.5rem',
 });
 
 export const subtitle = style({
   fontSize: '1.125rem',
-  color: '#333',
+  color: '#000',
   lineHeight: 1.8,
 });
 
@@ -44,7 +44,7 @@ export const grid = style({
 
 export const card = style({
   position: 'relative',
-  backgroundColor: 'gray10',
+  backgroundColor: '#fff',
   padding: '2.5rem',
   borderRadius: '1.5rem',
   boxShadow: '0 6px 20px rgba(0, 0, 0, 0.08)',
