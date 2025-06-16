@@ -34,11 +34,15 @@ export default function IntroSectionJapanese() {
         <div className={styles.grid}>
           {values.map((value) => (
             <div key={value.name} className={styles.card}>
-              <div className={styles.imageWrapper}>
-                <img src={value.image} alt={value.name} className={styles.image} />
+              <div className={styles.cardContent}>
+                <div className={styles.textSection}>
+                  <h3 className={styles.cardTitle}>{value.name}</h3>
+                  <p className={styles.cardText}>{value.description}</p>
+                </div>
+                <div className={styles.imageWrapper}>
+                  <img src={value.image} alt={value.name} className={styles.image} />
+                </div>
               </div>
-              <h3 className={styles.cardTitle}>{value.name}</h3>
-              <p className={styles.cardText}>{value.description}</p>
             </div>
           ))}
         </div>
