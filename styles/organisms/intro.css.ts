@@ -2,10 +2,10 @@ import { style } from '@vanilla-extract/css';
 
 export const section = style({
   backgroundColor: '#fff',
-  paddingTop: '6rem',
-  paddingBottom: '6rem',
-  paddingLeft: '2rem',
-  paddingRight: '2rem',
+  paddingTop: '3rem',
+  paddingBottom: '3rem',
+  paddingLeft: '4rem',
+  paddingRight: '4rem',
 });
 
 export const header = style({
