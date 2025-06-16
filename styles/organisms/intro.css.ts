@@ -1,41 +1,39 @@
-// styles/organisms/intro.css.ts
 import { style } from '@vanilla-extract/css';
-import { vars } from '@/styles/tokens/index.css';
 
 export const section = style({
-  backgroundColor: vars.color.slate50,
-  paddingTop: vars.spacing['5xl'],
-  paddingBottom: vars.spacing['5xl'],
+  // backgroundColor: '#fff',
+  backgroundColor: 'rgba(170, 165, 165, 0.8)',
+  paddingTop: '3rem',
+  paddingBottom: '3rem',
+  paddingLeft: '4rem',
+  paddingRight: '4rem',
+  marginLeft: '3rem',
+  marginRight: '3rem',
 });
 
 export const header = style({
-  maxWidth: '48rem', // Tailwind's max-w-3xl
+  maxWidth: '40rem',
   margin: '0 auto',
   textAlign: 'center',
-  marginBottom: vars.spacing['4xl'],
+  marginBottom: '4rem',
 });
 
 export const title = style({
-  fontSize: vars.fontSize.xl,
-  fontWeight: vars.fontWeight.bold,
-  color: vars.color.slate900,
-  marginBottom: vars.spacing.large,
-  '@media': {
-    'screen and (min-width: 768px)': {
-      fontSize: vars.fontSize['2xl'],
-    },
-  },
+  fontSize: '2rem',
+  fontWeight: 'bold',
+  color: '#d4464a',
+  marginBottom: '1.5rem',
 });
 
 export const subtitle = style({
-  fontSize: '1.125rem', // text-lg
-  color: vars.color.slate600,
-  lineHeight: 1.75,
+  fontSize: '1.125rem',
+  color: '#000',
+  lineHeight: 1.8,
 });
 
 export const grid = style({
   display: 'grid',
-  gap: vars.spacing['3xl'],
+  gap: '3rem',
   gridTemplateColumns: '1fr',
   '@media': {
     'screen and (min-width: 768px)': {
@@ -45,38 +43,59 @@ export const grid = style({
 });
 
 export const card = style({
-  backgroundColor: vars.color.white,
-  padding: vars.spacing['3xl'],
-  borderRadius: vars.radius.xl,
-  textAlign: 'center',
-  boxShadow: vars.shadow.card,
+  position: 'relative',
+  backgroundColor: '#fff',
+  padding: '2.5rem',
+  borderRadius: '1.5rem',
+  boxShadow: '0 6px 20px rgba(0, 0, 0, 0.08)',
+  border: '1px solid #eee',
+  overflow: 'hidden',
+  minHeight: '100px',
 });
 
-export const iconWrapper = style({
-  display: 'inline-flex',
+export const cardContent = style({
+  display: 'flex',
+  justifyContent: 'space-between',
   alignItems: 'center',
-  justifyContent: 'center',
-  width: '4rem',
-  height: '4rem',
-  backgroundColor: vars.color.slate100,
-  borderRadius: '9999px',
-  marginBottom: vars.spacing['2xl'],
+  gap: '1rem',
+  position: 'relative',
+  height: '100%',
 });
 
-export const icon = style({
-  width: '2rem',
-  height: '2rem',
-  color: vars.color.slate700,
+export const textSection = style({
+  flex: '1 1 60%',
+  zIndex: 1,
 });
 
 export const cardTitle = style({
-  fontSize: vars.fontSize.lg,
-  fontWeight: vars.fontWeight.semibold,
-  color: vars.color.slate900,
-  marginBottom: vars.spacing.large,
+  fontSize: '1.25rem',
+  fontWeight: '600',
+  color: '#800000',
+  marginBottom: '1rem',
 });
 
 export const cardText = style({
-  color: vars.color.slate600,
-  lineHeight: 1.75,
+  color: '#444',
+  fontSize: '1rem',
+  lineHeight: 1.5,
+});
+
+export const imageWrapper = style({
+  flexShrink: 0,
+  position: 'relative',
+  width: '120px',
+  height: '120px',
+  zIndex: 0,
+});
+
+export const image = style({
+  position: 'absolute',
+  right: '-20px',
+  top: '-20px',
+  width: '120px',
+  height: '120px',
+  objectFit: 'cover',
+  borderRadius: '9999px',
+  border: '3px solid #800000',
+  boxShadow: '0 4px 10px rgba(0, 0, 0, 0.15)',
 });

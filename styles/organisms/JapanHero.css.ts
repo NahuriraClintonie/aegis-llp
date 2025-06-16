@@ -6,18 +6,18 @@ export const hero = style({
   background: '#d4464a', // Not in vars, keep as is
   color: vars.color.white,
   fontFamily: vars.font.body,
-  padding: `${vars.spacing['4xl']} ${vars.spacing.large}`,
-  borderRadius: vars.radius.lg,
+  padding: `${vars.spacing['2xl']} 0`,
   overflow: 'hidden',
   height: '90vh',
+  marginLeft: '3rem',
+  marginRight: '3rem',
 });
 
 export const heroLeft = style({
   flex: 1,
   background: vars.color.gray50,
   color: vars.color.text,
-  padding: vars.spacing['3xl'],
-  borderRadius: `${vars.radius.lg} 0 0 ${vars.radius.lg}`,
+  padding: vars.spacing['2xl'],
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'center',
@@ -61,8 +61,7 @@ export const learnBtn = style({
 export const socialIcons = style({
   display: 'flex',
   gap: vars.spacing.large,
-  marginTop: vars.spacing['2xl'],
-  color: vars.color.text,
+  marginTop: vars.spacing.small,
 });
 
 export const icon = style({
@@ -77,7 +76,6 @@ export const icon = style({
 export const heroRight = style({
   flex: 1,
   position: 'relative',
-  borderRadius: `0 ${vars.radius.lg} ${vars.radius.lg} 0`,
   overflow: 'hidden',
   display: 'flex',
   alignItems: 'center',
