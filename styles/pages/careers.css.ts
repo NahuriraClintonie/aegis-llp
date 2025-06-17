@@ -1,30 +1,34 @@
-import { style } from "@vanilla-extract/css"
+import { style, globalStyle} from "@vanilla-extract/css"
+import { vars } from '@/styles/tokens/contracts/index.css';
+
+export const spaceY02 = style({}); // The class itself will be empty, it's just a marker
+export const spaceY66 = style({});
 
 // Reusable styles (analogous to Tailwind's utilities or common components)
 export const sectionPadding = style({
-  paddingTop: "4rem", // Equivalent to py-16 (adjust if your section-padding has different values)
-  paddingBottom: "4rem", // Equivalent to py-16
+  paddingTop: vars.spacing['4xl'], // Using theme spacing
+  paddingBottom: vars.spacing['4xl'],
   "@media": {
     "screen and (min-width: 768px)": {
-      paddingTop: "6rem", // md:py-24
-      paddingBottom: "6rem", // md:py-24
+      paddingTop: vars.spacing['6xl'], // md:py-24
+      paddingBottom: vars.spacing['6xl'],
     },
   },
 })
 
 export const containerCustom = style({
   maxWidth: "1280px", // Equivalent to max-w-7xl
-  margin: "0 auto", // Equivalent to mx-auto
-  paddingLeft: "1rem", // Equivalent to px-4
-  paddingRight: "1rem", // Equivalent to px-4
+  margin: "0 auto",
+  paddingLeft: vars.spacing.large,
+  paddingRight: vars.spacing.large,
   "@media": {
     "screen and (min-width: 640px)": {
-      paddingLeft: "1.5rem", // sm:px-6
-      paddingRight: "1.5rem", // sm:px-6
+      paddingLeft: vars.spacing.xl, // sm:px-6
+      paddingRight: vars.spacing.xl,
     },
     "screen and (min-width: 1024px)": {
-      paddingLeft: "2rem", // lg:px-8
-      paddingRight: "2rem", // lg:px-8
+      paddingLeft: vars.spacing.xl, // lg:px-8
+      paddingRight: vars.spacing.xl,
     },
   },
 })
@@ -33,27 +37,27 @@ export const btnBase = style({
   display: "inline-flex",
   alignItems: "center",
   justifyContent: "center",
-  padding: "0.75rem 1.5rem", // px-6 py-3
-  fontSize: "1rem", // text-base
-  fontWeight: "600", // font-semibold
-  borderRadius: "0.5rem", // rounded-lg
-  transition: "all 0.2s ease-in-out", // transition-all duration-300
+  padding: `${vars.spacing.medium} ${vars.spacing.xl}`, // px-6 py-3
+  fontSize: vars.fontSize.md,
+  fontWeight: vars.fontWeight.semibold,
+  borderRadius: vars.radius.md,
+  transition: "all 0.2s ease-in-out",
   cursor: "pointer",
-  border: "1px solid transparent", // Default transparent border
+  border: "1px solid transparent",
 })
 
 export const btnPrimary1 = style([
   btnBase,
   {
-    backgroundColor: "#1a202c", // bg-slate-900
-    color: "#ffffff", // text-white
+    backgroundColor: vars.color.primary, // Using theme primary color
+    color: vars.color.white,
     ":hover": {
-      backgroundColor: "#2d3748", // hover:bg-slate-800
+      backgroundColor: vars.color.secondary, // Using theme secondary color
     },
     ":focus": {
       outline: "2px solid transparent",
       outlineOffset: "2px",
-      boxShadow: "0 0 0 2px #cbd5e0", // focus-ring-2 focus-ring-slate-300
+      boxShadow: `0 0 0 2px ${vars.color.slate300}`,
     },
   },
 ])
@@ -61,23 +65,23 @@ export const btnPrimary1 = style([
 export const btnSecondary1 = style([
   btnBase,
   {
-    backgroundColor: "#ffffff", // bg-white
-    color: "#2d3748", // text-slate-800
-    border: "1px solid #cbd5e0", // border border-slate-300
+    backgroundColor: vars.color.white,
+    color: vars.color.slate800,
+    border: `1px solid ${vars.color.border}`,
     ":hover": {
-      backgroundColor: "#edf2f7", // hover:bg-slate-50
-      borderColor: "#a0aec0", // hover:border-slate-400
+      backgroundColor: vars.color.hover,
+      borderColor: vars.color.slate400,
     },
     ":focus": {
       outline: "2px solid transparent",
       outlineOffset: "2px",
-      boxShadow: "0 0 0 2px #cbd5e0", // focus-ring-2 focus-ring-slate-300
+      boxShadow: `0 0 0 2px ${vars.color.slate300}`,
     },
   },
 ])
 
 export const cardShadow = style({
-  boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)", // shadow-md
+  boxShadow: vars.shadow.card, // Using theme shadow
 })
 
 // General Layout & Backgrounds
@@ -86,15 +90,15 @@ export const minHeightScreen = style({
 })
 
 export const bgWhite = style({
-  backgroundColor: "#ffffff",
+  backgroundColor: vars.color.white,
 })
 
 export const bgSlate50 = style({
-  backgroundColor: "#f8fafc",
+  backgroundColor: vars.color.slate50,
 })
 
 export const bgSlate10 = style({
-  backgroundColor: "#f1f5f9",
+  backgroundColor: vars.color.slate100,
 })
 
 // Text Styles
@@ -103,50 +107,50 @@ export const textAlign = style({
 })
 
 export const textXs1 = style({
-  fontSize: "0.75rem",
+  fontSize: "0.75rem", // This size isn't in your theme, keeping as is
   lineHeight: "1rem",
 })
 
 export const textSm1 = style({
-  fontSize: "0.875rem",
+  fontSize: vars.fontSize.sm,
   lineHeight: "1.25rem",
 })
 
 export const textLg = style({
-  fontSize: "1.125rem",
+  fontSize: vars.fontSize.lg,
   lineHeight: "1.75rem",
 })
 
 export const textXl = style({
-  fontSize: "1.25rem",
+  fontSize: vars.fontSize.xl,
   lineHeight: "1.75rem",
 })
 
 export const text3xl = style({
-  fontSize: "1.875rem",
+  fontSize: vars.fontSize['3xl'],
   lineHeight: "2.25rem",
 })
 
 export const text4xl = style({
-  fontSize: "2.25rem",
+  fontSize: vars.fontSize['4xl'],
   lineHeight: "2.5rem",
 })
 
 export const text5xl = style({
-  fontSize: "3rem",
+  fontSize: "3rem", // This size isn't in your theme, keeping as is
   lineHeight: "1",
 })
 
 export const fontBold = style({
-  fontWeight: "700",
+  fontWeight: vars.fontWeight.bold,
 })
 
 export const fontSemibold = style({
-  fontWeight: "600",
+  fontWeight: vars.fontWeight.semibold,
 })
 
 export const fontMedium1 = style({
-  fontWeight: "500",
+  fontWeight: vars.fontWeight.medium,
 })
 
 export const leadingRelaxed = style({
@@ -154,27 +158,27 @@ export const leadingRelaxed = style({
 })
 
 export const textColor = style({
-  color: "#1e293b", // slate-900
+  color: vars.color.secondary,
 })
 
 export const textSlate900 = style({
-  color: "#0f172a",
+  color: vars.color.slate900,
 })
 
 export const textSlate600 = style({
-  color: "#475569",
+  color: vars.color.slate600,
 })
 
 export const textSlate7 = style({
-  color: "#334155",
+  color: vars.color.slate700,
 })
 
 export const textSlate500 = style({
-  color: "#64748b",
+  color: vars.color.slate500,
 })
 
 export const textSlate400 = style({
-  color: "#94a3b8",
+  color: vars.color.slate400,
 })
 
 // Margins and Paddings
@@ -184,65 +188,65 @@ export const mxAuto = style({
 })
 
 export const mb2 = style({
-  marginBottom: "0.5rem",
+  marginBottom: vars.spacing.small,
 })
 export const mb3 = style({
-  marginBottom: "0.75rem",
+  marginBottom: vars.spacing.medium,
 })
 export const mb4 = style({
-  marginBottom: "1rem",
+  marginBottom: vars.spacing.large,
 })
 export const mb6 = style({
-  marginBottom: "1.5rem",
+  marginBottom: vars.spacing.xl,
 })
 export const mb8 = style({
-  marginBottom: "2rem",
+  marginBottom: vars.spacing['2xl'],
 })
 export const mb12 = style({
-  marginBottom: "3rem",
+  marginBottom: vars.spacing['3xl'],
 })
 
 export const mr11 = style({
-  marginRight: "0.25rem",
+  marginRight: vars.spacing.xs,
 })
 export const mr2 = style({
-  marginRight: "0.5rem",
+  marginRight: vars.spacing.small,
 })
 export const mr3 = style({
-  marginRight: "0.75rem",
+  marginRight: vars.spacing.medium,
 })
 
 export const ml2 = style({
-  marginLeft: "0.5rem",
+  marginLeft: vars.spacing.small,
 })
 
 export const mx22 = style({
-  marginLeft: "0.5rem",
-  marginRight: "0.5rem",
+  marginLeft: vars.spacing.small,
+  marginRight: vars.spacing.small,
 })
 
 export const px33 = style({
-  paddingLeft: "0.75rem",
-  paddingRight: "0.75rem",
+  paddingLeft: vars.spacing.medium,
+  paddingRight: vars.spacing.medium,
 })
 
 export const py11 = style({
-  paddingTop: "0.25rem",
-  paddingBottom: "0.25rem",
+  paddingTop: vars.spacing.xs,
+  paddingBottom: vars.spacing.xs,
 })
 
 export const pt6 = style({
-  paddingTop: "1.5rem",
+  paddingTop: vars.spacing.xl,
 })
 
 export const p4 = style({
-  padding: "1rem",
+  padding: vars.spacing.large,
 })
 export const p6 = style({
-  padding: "1.5rem",
+  padding: vars.spacing.xl,
 })
 export const p8 = style({
-  padding: "2rem",
+  padding: vars.spacing['2xl'],
 })
 
 // Flexbox & Grid
@@ -275,16 +279,16 @@ export const flex11 = style({
 })
 
 export const gap33 = style({
-  gap: "0.75rem",
+  gap: vars.spacing.medium,
 })
 export const gap4 = style({
-  gap: "1rem",
+  gap: vars.spacing.large,
 })
 export const gap66 = style({
-  gap: "1.5rem",
+  gap: vars.spacing.xl,
 })
 export const gap8 = style({
-  gap: "2rem",
+  gap: vars.spacing['2xl'],
 })
 
 export const gridCols11 = style({
@@ -292,22 +296,16 @@ export const gridCols11 = style({
 })
 
 export const spaceY22 = style({
-  selectors: {
-    // This targets every direct child that is not the last child
-    "& > *:not(:last-child)": {
-      marginBottom: "0.5rem",
-    },
-  },
-})
+  display: 'flex',
+  flexDirection: 'column',
+  gap: vars.spacing.small,
+});
 
 export const spaceY6 = style({
-  selectors: {
-    // This targets every direct child that is not the last child
-    "& > *:not(:last-child)": {
-      marginBottom: "1.5rem",
-    },
-  },
-})
+  display: 'flex',
+  flexDirection: 'column',
+  gap: vars.spacing.xl,
+});
 
 // Widths & Heights
 export const w1_5 = style({
@@ -318,24 +316,24 @@ export const h1_5 = style({
 })
 
 export const w4 = style({
-  width: "1rem",
+  width: vars.spacing.large,
 })
 export const h4 = style({
-  height: "1rem",
+  height: vars.spacing.large,
 })
 
 export const w8 = style({
-  width: "2rem",
+  width: vars.spacing['2xl'],
 })
 export const h8 = style({
-  height: "2rem",
+  height: vars.spacing['2xl'],
 })
 
 export const w16 = style({
-  width: "4rem",
+  width: vars.spacing['4xl'],
 })
 export const h16 = style({
-  height: "4rem",
+  height: vars.spacing['4xl'],
 })
 
 export const wFull = style({
@@ -352,11 +350,11 @@ export const borderT = style({
 })
 
 export const borderSlate200 = style({
-  borderColor: "#e2e8f0",
+  borderColor: "#e2e8f0", // This color isn't in your theme, you may want to add it
 })
 
 export const borderSlate300 = style({
-  borderColor: "#cbd5e1",
+  borderColor: vars.color.slate300,
 })
 
 // Rounded Corners
@@ -365,11 +363,11 @@ export const roundedFull1 = style({
 })
 
 export const roundedLg = style({
-  borderRadius: "0.5rem",
+  borderRadius: vars.radius.lg,
 })
 
 export const roundedXl = style({
-  borderRadius: "0.75rem",
+  borderRadius: vars.radius.xl,
 })
 
 // Other Utilities
@@ -407,7 +405,7 @@ export const h1Text = text4xl
 export const h1MdText = style({
   "@media": {
     "screen and (min-width: 768px)": {
-      fontSize: '5xl', // md:text-5xl
+      fontSize: "3rem", // md:text-5xl (keeping as is since not in theme)
     },
   },
 })
@@ -430,7 +428,7 @@ export const mdGridCols3 = style({
   },
 })
 export const marginTop12 = style({
-  marginTop: "3rem",
+  marginTop: vars.spacing['3xl'],
 })
 
 export const divTextAlign = textAlign
@@ -458,7 +456,7 @@ export const h2Text3xl = text3xl
 export const h2MdText4xl = style({
   "@media": {
     "screen and (min-width: 768px)": {
-      fontSize: '4xl', // md:text-4xl
+      fontSize: vars.fontSize['4xl'],
     },
   },
 })
@@ -479,7 +477,7 @@ export const lgGridCols2 = style({
 export const jobCard = style([
   bgWhite,
   border,
-  borderSlate200,
+  borderSlate300, // Updated to use theme color
   roundedXl,
   p6,
   cardShadow,
@@ -488,7 +486,7 @@ export const jobCard = style([
 
 export const jobCardHover = style({
   ":hover": {
-    borderColor: "#a0aec0", // hover:border-slate-300
+    borderColor: vars.color.slate400,
   },
 })
 
@@ -547,9 +545,9 @@ export const flex1 = flex11
 export const btnPrimary = btnPrimary1
 
 export const jobDetailsSection = style({
-  marginTop: "1.5rem", // mt-6
-  paddingTop: "1.5rem", // pt-6
-  borderTop: "1px solid #e2e8f0", // border-t border-slate-200
+  marginTop: vars.spacing.xl,
+  paddingTop: vars.spacing.xl,
+  borderTop: `1px solid ${vars.color.slate300}`, // Updated to use theme color
 })
 export const gridCols1MdGridCols2 = style({
   gridTemplateColumns: "repeat(1, minmax(0, 1fr))",
@@ -572,11 +570,11 @@ export const flexItemsStart = itemsStart
 export const spanW1_5 = w1_5
 export const spanH1_5 = h1_5
 export const spanBgSlate400 = style({
-  backgroundColor: "#94a3b8", // bg-slate-400
+  backgroundColor: vars.color.slate400,
 })
 export const spanRoundedFull = roundedFull
 export const spanMt2 = style({
-  marginTop: "0.5rem",
+  marginTop: vars.spacing.small,
 })
 export const spanMr3 = mr3
 export const spanFlexShrink0 = flexShrink0
@@ -584,7 +582,7 @@ export const spanFlexShrink0 = flexShrink0
 // Application Form Section Specific Styles
 export const applicationFormBg = bgSlate50
 export const applicationFormMaxW2xl = style({
-  maxWidth: "42rem", // max-w-2xl
+  maxWidth: "42rem",
 })
 export const applicationFormMxAuto = mxAuto
 export const applicationFormTextCenterMb8 = style([
@@ -621,76 +619,70 @@ export const applicationFormGap6 = gap6
 export const applicationFormLabel = style([
   style({
     display: "block",
-    fontSize: "0.875rem", // text-sm
-    fontWeight: "500", // font-medium
-    color: "#334155", // text-slate-700
-    marginBottom: "0.5rem", // mb-2
+    fontSize: vars.fontSize.sm,
+    fontWeight: vars.fontWeight.medium,
+    color: vars.color.slate700,
+    marginBottom: vars.spacing.small,
   }),
 ])
 
 export const applicationFormInput = style([
   wFull,
-  px3,
-  py1,
   border,
   borderSlate300,
   roundedLg,
   transitionColors,
   style({
-    paddingTop: "0.75rem", // py-3
-    paddingBottom: "0.75rem", // py-3
-    paddingLeft: "1rem", // px-4
-    paddingRight: "1rem", // px-4
+    paddingTop: vars.spacing.medium,
+    paddingBottom: vars.spacing.medium,
+    paddingLeft: vars.spacing.large,
+    paddingRight: vars.spacing.large,
     ":focus": {
       outline: "2px solid transparent",
       outlineOffset: "2px",
-      boxShadow: "0 0 0 2px #0f172a", // focus:ring-2 focus:ring-slate-900
-      borderColor: "transparent", // focus:border-transparent
+      boxShadow: `0 0 0 2px ${vars.color.focusRing}`,
+      borderColor: "transparent",
     },
   }),
 ])
 
 export const applicationFormSelect = style([
   wFull,
-  px3,
-  py1,
   border,
   borderSlate300,
   roundedLg,
   transitionColors,
   style({
-    paddingTop: "0.75rem", // py-3
-    paddingBottom: "0.75rem", // py-3
-    paddingLeft: "1rem", // px-4
-    paddingRight: "1rem", // px-4
+    paddingTop: vars.spacing.medium,
+    paddingBottom: vars.spacing.medium,
+    paddingLeft: vars.spacing.large,
+    paddingRight: vars.spacing.large,
     ":focus": {
       outline: "2px solid transparent",
       outlineOffset: "2px",
-      boxShadow: "0 0 0 2px #0f172a", // focus:ring-2 focus:ring-slate-900
-      borderColor: "transparent", // focus:border-transparent
+      boxShadow: `0 0 0 2px ${vars.color.focusRing}`,
+      borderColor: "transparent",
     },
   }),
 ])
 
 export const applicationFormTextArea = style([
   wFull,
-  px3,
-  py1,
   border,
   borderSlate300,
   roundedLg,
   transitionColors,
   resizeNone,
   style({
-    paddingTop: "0.75rem", // py-3
-    paddingBottom: "0.75rem", // py-3
-    paddingLeft: "1rem", // px-4
-    paddingRight: "1rem", // px-4
+    paddingTop: vars.spacing.medium,
+    paddingBottom: vars.spacing.medium,
+    paddingLeft: vars.spacing.large,
+    paddingRight: vars.spacing.large,
     ":focus": {
       outline: "2px solid transparent",
       outlineOffset: "2px",
-      boxShadow: "0 0 0 2px #0f172a", // focus:ring-2 focus:ring-slate-900
-      borderColor: "transparent", // focus:border-transparent
+      boxShadow: `0 0 0 2px ${vars.color.focusRing}`,
+      borderColor: "transparent",
     },
   }),
 ])
@@ -701,7 +693,7 @@ export const applicationFormBtnContainer = style([
   style({
     "@media": {
       "screen and (min-width: 640px)": {
-        flexDirection: "row", // sm:flex-row
+        flexDirection: "row",
       },
     },
   }),
@@ -709,10 +701,10 @@ export const applicationFormBtnContainer = style([
 
 export const applicationFormNoteContainer = style([
   style({
-    marginTop: "1.5rem", // mt-6
-    padding: "1rem", // p-4
-    backgroundColor: "#f8fafc", // bg-slate-50
-    borderRadius: "0.5rem", // rounded-lg
+    marginTop: vars.spacing.xl,
+    padding: vars.spacing.large,
+    backgroundColor: vars.color.slate50,
+    borderRadius: vars.radius.md,
   }),
 ])
 
@@ -729,10 +721,10 @@ export const companyCultureGrid = style([
   {
     "@media": {
       "screen and (min-width: 768px)": {
-        gridTemplateColumns: "repeat(2, minmax(0, 1fr))", // md:grid-cols-2
+        gridTemplateColumns: "repeat(2, minmax(0, 1fr))",
       },
       "screen and (min-width: 1024px)": {
-        gridTemplateColumns: "repeat(3, minmax(0, 1fr))", // lg:grid-cols-3
+        gridTemplateColumns: "repeat(3, minmax(0, 1fr))",
       },
     },
   },
