@@ -1,79 +1,92 @@
-import { style } from '@vanilla-extract/css'
+// contact.css.ts
+import { style, styleVariants, globalStyle } from '@vanilla-extract/css'
 import { vars } from '@/styles/tokens/contracts/index.css';
 
-export const wrapper = style({
+export const pageWrapper = style({
   minHeight: '100vh',
-  backgroundColor: vars.color.white,
+  backgroundColor: '#ffffff',
 })
 
 export const heroSection = style({
   backgroundColor: vars.color.slate50,
-  padding: `${vars.spacing.xl} 0`,
-  textAlign: 'center',
+  padding: '4rem 0',
 })
 
-export const heroHeading = style({
-  fontSize: vars.fontSize['4xl'],
-  fontWeight: vars.fontWeight.bold,
+export const containerCustom = style({
+  width: '100%',
+  maxWidth: '1200px',
+  padding: '0 1.5rem',
+  margin: '0 auto',
+})
+
+export const heroContent = style({
+  textAlign: 'center',
+  maxWidth: '768px',
+  margin: '0 auto',
+})
+
+export const heroTitle = style({
+  fontSize: '2.25rem',
+  fontWeight: 700,
   color: vars.color.slate900,
-  marginBottom: vars.spacing.large,
+  marginBottom: '1.5rem',
 })
 
 export const heroText = style({
-  fontSize: vars.fontSize.xl,
+  fontSize: '1.25rem',
   color: vars.color.slate600,
-  lineHeight: 1.7,
+  lineHeight: 1.75,
 })
 
-export const section = style({
-  padding: `${vars.spacing.xl} 0`,
+export const sectionPadding = style({
+  padding: '4rem 0',
 })
 
-export const formContainer = style({
+export const gridWrapper = style({
   display: 'grid',
   gridTemplateColumns: '1fr',
-  gap: vars.spacing.xl,
+  gap: '3rem',
 
   '@media': {
     'screen and (min-width: 1024px)': {
-      gridTemplateColumns: '1fr 1fr',
+      gridTemplateColumns: 'repeat(2, 1fr)',
     },
   },
 })
 
 export const formTitle = style({
-  fontSize: vars.fontSize['2xl'],
-  fontWeight: vars.fontWeight.bold,
+  fontSize: '1.5rem',
+  fontWeight: 700,
   color: vars.color.slate900,
-  marginBottom: vars.spacing.large,
+  marginBottom: '1.5rem',
 })
 
-export const form = style({
+export const formWrapper = style({
   display: 'flex',
   flexDirection: 'column',
-  gap: vars.spacing.large,
+  gap: '1.5rem',
 })
 
-export const inputGroup = style({})
-
 export const label = style({
-  fontSize: vars.fontSize.sm,
-  fontWeight: vars.fontWeight.medium,
-  color: vars.color.slate700,
-  marginBottom: vars.spacing.xs,
   display: 'block',
+  fontSize: '0.875rem',
+  fontWeight: 500,
+  color: vars.color.slate700,
+  marginBottom: '0.5rem',
 })
 
 export const input = style({
   width: '100%',
-  padding: `${vars.spacing.medium} ${vars.spacing.large}`,
+  padding: '0.75rem 1rem',
   border: `1px solid ${vars.color.slate300}`,
-  borderRadius: vars.radius.lg,
-  transition: 'border-color 0.2s, box-shadow 0.2s',
-  ':focus': {
-    outline: 'none',
-    borderColor: 'transparent',
-    boxShadow: `0 0 0 2px ${vars.color.slate900}`,
+  borderRadius: '0.5rem',
+  transition: 'all 0.2s ease-in-out',
+  selectors: {
+    '&:focus': {
+      borderColor: 'transparent',
+      outline: 'none',
+      boxShadow: `0 0 0 2px ${vars.color.slate900}`,
+    },
   },
 })
 
@@ -81,17 +94,18 @@ export const textarea = style([input, {
   resize: 'none',
 }])
 
-export const button = style({
+export const submitButton = style({
   width: '100%',
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
-  padding: `${vars.spacing.medium} ${vars.spacing.large}`,
-  backgroundColor: vars.color.primary,
-  color: vars.color.white,
-  fontWeight: vars.fontWeight.medium,
-  borderRadius: vars.radius.lg,
-  transition: 'opacity 0.2s',
+  backgroundColor: vars.color.slate900,
+  color: '#fff',
+  padding: '0.75rem 1.25rem',
+  borderRadius: '0.5rem',
+  fontWeight: 600,
+  cursor: 'pointer',
+  transition: 'opacity 0.3s ease',
 
   selectors: {
     '&:disabled': {
@@ -101,45 +115,84 @@ export const button = style({
   },
 })
 
-export const privacyNotice = style({
-  marginTop: vars.spacing.xl,
-  padding: vars.spacing.large,
+export const iconRight = style({
+  marginLeft: '0.5rem',
+  width: '1rem',
+  height: '1rem',
+})
+
+export const loader = style({
+  width: '1.25rem',
+  height: '1.25rem',
+  borderBottom: '2px solid #fff',
+  borderRadius: '50%',
+  animation: 'spin 1s linear infinite',
+})
+
+export const noticeBox = style({
+  marginTop: '2rem',
+  padding: '1rem',
   backgroundColor: vars.color.slate50,
-  borderRadius: vars.radius.lg,
-  fontSize: vars.fontSize.sm,
+  borderRadius: '0.5rem',
+})
+
+export const noticeText = style({
+  fontSize: '0.875rem',
   color: vars.color.slate600,
 })
 
-export const infoTitle = style([formTitle])
+export const contactInfoBox = style({
+  display: 'flex',
+  flexDirection: 'column',
+  gap: '1.5rem',
+  marginBottom: '2rem',
+})
 
 export const infoItem = style({
   display: 'flex',
   alignItems: 'flex-start',
-  gap: vars.spacing.medium,
 })
 
-export const infoIcon = style({
+export const iconBox = style({
   flexShrink: 0,
   width: '3rem',
   height: '3rem',
   backgroundColor: vars.color.slate100,
-  borderRadius: vars.radius.lg,
+  borderRadius: '0.5rem',
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
 })
 
-export const infoLabel = style({
-  fontSize: vars.fontSize.lg,
-  fontWeight: vars.fontWeight.semibold,
-  color: vars.color.slate900,
+export const infoIcon = style({
+  width: '1.5rem',
+  height: '1.5rem',
+  color: vars.color.slate700,
 })
 
 export const infoText = style({
-  color: vars.color.slate600,
+  marginLeft: '1rem',
 })
 
 export const imageWrapper = style({
+  borderRadius: '0.75rem',
   overflow: 'hidden',
-  borderRadius: vars.radius.xl,
+})
+
+export const officeImage = style({
+  width: '100%',
+  height: '16rem',
+  objectFit: 'cover',
+})
+
+// Styles for elements inside .infoText
+globalStyle(`${infoText} h3`, {
+  fontSize: '1.125rem',
+  fontWeight: 600,
+  color: vars.color.slate900,
+  marginBottom: '0.25rem',
+})
+
+globalStyle(`${infoText} p`, {
+  color: vars.color.slate600,
 })
