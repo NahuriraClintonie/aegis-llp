@@ -76,10 +76,10 @@ export default function AboutPage() {
             </div>
             <div className={styles.imageWrapper}>
               <Image
-                src="/placeholder.svg?height=400&width=600"
+                 src="/aegis group 6.jpeg"
                 alt="LLP Structure Diagram"
                 width={600}
-                height={400}
+                height={500}
                 className={styles.image}
               />
             </div>

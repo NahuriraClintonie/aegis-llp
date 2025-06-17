@@ -1,4 +1,3 @@
-// styles/pages/about.css.ts
 import { style, styleVariants } from '@vanilla-extract/css';
 import { vars } from '@/styles/tokens/contracts/index.css';
 
