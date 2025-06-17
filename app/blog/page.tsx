@@ -23,7 +23,7 @@ const blogPosts = [
     date: "2024-01-12",
     readTime: "7 min read",
     category: "Insights",
-    image: "/placeholder.svg?height=300&width=500",
+    image: "/member projects.jpg",
     featured: true,
   },
   {
@@ -36,7 +36,7 @@ const blogPosts = [
     date: "2024-01-08",
     readTime: "5 min read",
     category: "Innovation",
-    image: "/placeholder.svg?height=300&width=500",
+    image: "/avatar 4.png",
     featured: false,
   },
   {
@@ -49,7 +49,7 @@ const blogPosts = [
     date: "2024-01-05",
     readTime: "4 min read",
     category: "Team",
-    image: "/placeholder.svg?height=300&width=500",
+    image: "/avatar 2.png",
     featured: false,
   },
   {
@@ -62,7 +62,7 @@ const blogPosts = [
     date: "2024-01-02",
     readTime: "6 min read",
     category: "Industry",
-    image: "/placeholder.svg?height=300&width=500",
+    image: "/avatar 1.png",
     featured: false,
   },
   {
@@ -75,7 +75,7 @@ const blogPosts = [
     date: "2023-12-28",
     readTime: "5 min read",
     category: "Culture",
-    image: "/placeholder.svg?height=300&width=500",
+    image: "/Image17.jpeg",
     featured: false,
   },
   {
@@ -87,7 +87,7 @@ const blogPosts = [
     date: "2023-12-25",
     readTime: "8 min read",
     category: "Insights",
-    image: "/placeholder.svg?height=300&width=500",
+    image: "/Image18.jpeg",
     featured: false,
   },
 ]
@@ -116,16 +116,10 @@ export default function BlogPage() {
         <section className={styles.sectionPadding}>
           <div className={styles.containerCustom}>
             <span className={styles.featuredBadge}>Featured Post</span>
-            <div
-              style={{
-                display: "grid",
-                gap: "3rem",
-                gridTemplateColumns: "1fr",
-                alignItems: "center",
-              }}>
+            <div className={styles.featuredGrid}>
               <div>
                 <div className={styles.postMeta}>
-                  <Calendar size={16} style={{ marginRight: "0.5rem" }} />
+                  <Calendar size={16} />
                   <time dateTime={featuredPost.date}>
                     {new Date(featuredPost.date).toLocaleDateString("en-US", {
                       year: "numeric",
@@ -133,16 +127,14 @@ export default function BlogPage() {
                       day: "numeric",
                     })}
                   </time>
-                  <span style={{ margin: "0 0.5rem" }}>•</span>
-                  <Clock size={16} style={{ marginRight: "0.25rem" }} />
+                  <span>•</span>
+                  <Clock size={16} />
                   {featuredPost.readTime}
                 </div>
 
                 <span className={styles.categoryBadge}>{featuredPost.category}</span>
 
-                <h2 className={styles.postTitle} style={{ fontSize: "1.5rem" }}>
-                  {featuredPost.title}
-                </h2>
+                <h2 className={styles.postTitle}>{featuredPost.title}</h2>
 
                 <p className={styles.postExcerpt}>{featuredPost.excerpt}</p>
 
@@ -160,13 +152,14 @@ export default function BlogPage() {
                   Read Full Post <ArrowRight size={16} style={{ marginLeft: "0.25rem" }} />
                 </Link>
               </div>
-              <div>
+
+              <div className={styles.postImageWrapper}>
                 <Image
                   src={featuredPost.image}
                   alt={featuredPost.title}
                   width={500}
                   height={300}
-                  style={{ borderRadius: "0.75rem", width: "100%", height: "auto" }}
+                  style={{ width: "100%", height: "auto" }}
                 />
               </div>
             </div>

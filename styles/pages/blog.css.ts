@@ -93,7 +93,10 @@ export const postCard = style({
 
 export const postImageWrapper = style({
   position: 'relative',
-  height: '12rem',
+  maxWidth: '550px',
+  margin: '0 auto',
+  borderRadius: '0.75rem',
+  overflow: 'hidden',
 })
 
 export const postContent = style({
@@ -157,6 +160,18 @@ export const readMore = style({
   selectors: {
     '&:hover': {
       color: vars.color.slate600,
+    },
+  },
+})
+
+export const featuredGrid = style({
+  display: 'grid',
+  gap: '3rem',
+  gridTemplateColumns: '1fr',
+  alignItems: 'center',
+  '@media': {
+    'screen and (min-width: 768px)': {
+      gridTemplateColumns: 'repeat(2, 1fr)',
     },
   },
 })
