@@ -9,6 +9,7 @@ const navItems = [
   { label: 'Services', href: '/services' },
   { label: 'Contact', href: '/contact' },
   { label: 'News', href: '/news' },
+  { label: 'Blog', href: '/blog' },
 ];
 
 export default function Header() {
