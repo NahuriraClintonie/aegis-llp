@@ -6,7 +6,7 @@ import * as styles from '@/styles/layouts/header.css';
 const navItems = [
   { label: 'Home', href: '/' },
   { label: 'About', href: '/about' },
-  { label: 'Services', href: '/services' },
+  { label: 'Companies', href: '/companies' },
   { label: 'Contact', href: '/contact' },
   { label: 'News', href: '/news' },
   { label: 'Blog', href: '/blog' },
