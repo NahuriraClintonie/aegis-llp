@@ -5,63 +5,62 @@ import { ArrowRight } from "lucide-react"
 import * as styles from "@/styles/pages/business.css"
 
 export const metadata: Metadata = {
-  title: "Member Companies - AEGIS LLP",
-  description:
-    "Explore our diverse network of member companies, each bringing unique expertise and innovative solutions.",
+  title: "加盟企業 - AEGIS LLP",
+  description: "多様な専門性と革新的なソリューションを持つ、私たちの加盟企業ネットワークをご覧ください。",
 }
 
 const companies = [
   {
     id: 1,
     name: "TechFlow Solutions",
-    specialty: "Digital Transformation & AI",
-    description: "Leading digital transformation initiatives with cutting-edge AI and automation solutions.",
-    logo: "/placeholder.svg?height=80&width=200",
-    category: "Technology",
+    specialty: "デジタルトランスフォーメーション & AI",
+    description: "最先端のAIと自動化ソリューションでデジタルトランスフォーメーションをリードします。",
+    logo: "/techflow.jpg",
+    category: "テクノロジー",
   },
   {
     id: 2,
     name: "Design Studio Zen",
-    specialty: "UX/UI Design & Branding",
-    description: "Creating exceptional user experiences through minimalist design and strategic branding.",
-    logo: "/placeholder.svg?height=80&width=200",
-    category: "Design",
+    specialty: "UX/UIデザイン & ブランディング",
+    description: "ミニマルなデザインと戦略的なブランディングで優れたユーザー体験を創出します。",
+    logo: "/design studio.jpg",
+    category: "デザイン",
   },
   {
     id: 3,
     name: "Quantum Analytics",
-    specialty: "Data Science & Analytics",
-    description: "Transforming complex data into actionable insights for strategic decision-making.",
-    logo: "/placeholder.svg?height=80&width=200",
-    category: "Analytics",
+    specialty: "データサイエンス & 分析",
+    description: "複雑なデータを戦略的意思決定のための実用的な洞察へと変換します。",
+    logo: "/quantum analytics.jpg",
+    category: "アナリティクス",
   },
   {
     id: 4,
     name: "Green Energy Co.",
-    specialty: "Sustainable Technology",
-    description: "Pioneering sustainable energy solutions for a cleaner, more efficient future.",
-    logo: "/placeholder.svg?height=80&width=200",
-    category: "Sustainability",
+    specialty: "サステナブルテクノロジー",
+    description: "よりクリーンで効率的な未来のために持続可能なエネルギーソリューションを開拓しています。",
+    logo: "/green energy.jpg",
+    category: "サステナビリティ",
   },
   {
     id: 5,
     name: "CloudSecure Systems",
-    specialty: "Cybersecurity & Cloud",
-    description: "Protecting digital assets with advanced cybersecurity and cloud infrastructure solutions.",
-    logo: "/placeholder.svg?height=80&width=200",
-    category: "Security",
+    specialty: "サイバーセキュリティ & クラウド",
+    description: "高度なサイバーセキュリティとクラウドインフラでデジタル資産を保護します。",
+    logo: "/cloud secure.jpg",
+    category: "セキュリティ",
   },
   {
     id: 6,
     name: "Innovation Labs",
-    specialty: "R&D & Prototyping",
-    description: "Accelerating innovation through rapid prototyping and research & development services.",
-    logo: "/placeholder.svg?height=80&width=200",
-    category: "Research",
+    specialty: "研究開発 & プロトタイピング",
+    description: "迅速なプロトタイピングと研究開発サービスでイノベーションを加速します。",
+    logo: "/innovation labs.jpg",
+    category: "リサーチ",
   },
-]
+];
 
-const categories = ["All", "Technology", "Design", "Analytics", "Sustainability", "Security", "Research"]
+const categories = ["すべて", "テクノロジー", "デザイン", "アナリティクス", "サステナビリティ", "セキュリティ", "リサーチ"];
 
 export default function CompaniesPage() {
   return (
@@ -69,11 +68,10 @@ export default function CompaniesPage() {
       <section className={styles.heroSection}>
         <div className={styles.containerCustom}>
           <div className={styles.heroContent}>
-            <h1 className={styles.heroTitle}>Our Member Companies</h1>
-            <p className={styles.heroText}>
-              Discover the diverse expertise and innovative solutions offered by our carefully selected network of
-              professional partner companies.
-            </p>
+           <h1 className={styles.heroTitle}>加盟企業のご紹介</h1>
+              <p className={styles.heroText}>
+                当社が厳選したパートナー企業ネットワークが提供する、多様な専門性と革新的なソリューションをご覧ください。
+              </p>
           </div>
         </div>
       </section>
@@ -91,28 +89,25 @@ export default function CompaniesPage() {
           <div className={styles.companyGrid}>
             {companies.map((company) => (
               <div key={company.id} className={styles.companyCard}>
-                <div className={styles.logoWrapper}>
+                <div className={styles.cardImageWrapper}>
                   <Image
-                    src={company.logo || "/placeholder.svg"}
+                    src={company.logo || "/aegis group 5.jpeg"}
                     alt={`${company.name} logo`}
-                    width={200}
-                    height={80}
-                    className={styles.companyLogo}
+                    fill
+                    className={styles.cardImage}
                   />
                 </div>
 
-                <div className={styles.companyInfo}>
+                <div className={styles.cardContent}>
                   <span className={styles.categoryBadge}>{company.category}</span>
                   <h3 className={styles.companyName}>{company.name}</h3>
                   <p className={styles.companySpecialty}>{company.specialty}</p>
+                  <p className={styles.companyDescription}>{company.description}</p>
+                  <Link href={`/companies/${company.id}`} className={styles.learnMore}>
+                    詳しく見る
+                    <ArrowRight className={styles.arrowIcon} />
+                  </Link>
                 </div>
-
-                <p className={styles.companyDescription}>{company.description}</p>
-
-                <Link href={`/companies/${company.id}`} className={styles.learnMore}>
-                  Learn more
-                  <ArrowRight className={styles.arrowIcon} />
-                </Link>
               </div>
             ))}
           </div>

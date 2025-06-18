@@ -25,6 +25,13 @@ export const defaultTheme = createTheme(vars, {
     brandRedSoft: '#ffe9ea',
     textDark: '#1a1a1a',
     bgLight: '#f8fafc',
+    blue600: '#2563eb',
+    blue700: '#1d4ed8',
+    hoverCardShadow: '0 8px 24px rgba(0,0,0,0.08)',
+    link: '#2563eb',
+    linkHover: '#1d4ed8',
+    badgeBg: '#f1f5f9',
+    badgeText: '#334155',
   },
   spacing: {
     xs: '0.25rem',
@@ -37,6 +44,7 @@ export const defaultTheme = createTheme(vars, {
     '4xl': '5rem',
     '5xl': '6rem',
     '6xl': '6rem',
+    '7xl': '8rem',
   },
   font: {
     body: 'Noto Sans JP, sans-serif',
@@ -61,9 +69,13 @@ export const defaultTheme = createTheme(vars, {
     md: '8px',
     lg: '12px',
     xl: '1rem',
+    full: '9999px',
+
   },
   shadow: {
     card: '0 4px 14px rgba(0, 0, 0, 0.05)',
     soft: '0 2px 6px rgba(0, 0, 0, 0.04)',
+    hoverCard: '0 8px 24px rgba(0, 0, 0, 0.08)',
+
   },
 });

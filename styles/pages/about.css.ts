@@ -124,41 +124,10 @@ export const linkIcon = style({
   height: '1rem',
 });
 
-// Card styles
-export const card = style({
-  background: vars.color.slate600,
-  border: `1px solid ${vars.color.border}`,
-  borderRadius: vars.radius.lg,
-  padding: vars.spacing.large,
-  boxShadow: vars.shadow.card,
-  transition: 'transform 0.2s ease',
-  selectors: {
-    '&:hover': {
-      transform: 'translateY(-4px)',
-    },
-  },
-});
-
-export const cardIconWrapper = style({
-  background: vars.color.brandRedSoft,
-  padding: vars.spacing.small,
-  borderRadius: '50%',
-  display: 'inline-flex',
-  justifyContent: 'center',
-  alignItems: 'center',
-  marginBottom: vars.spacing.small,
-});
-
-export const cardIcon = style({
-  color: '#d4464a',
-  width: '1.5rem',
-  height: '1.5rem',
-});
-
 export const cardIconLarge = style({
   width: '2.5rem',
   height: '2.5rem',
-  color: '#d4464a',
+  color: vars.color.brandRed,
 });
 
 export const cardTitle = style({
