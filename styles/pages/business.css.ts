@@ -50,11 +50,11 @@ export const categoryButtons = style({
 
 export const categoryButton = style({
   padding: `${vars.spacing.small} ${vars.spacing.large}`,
-  borderRadius: '9999px',
+  borderRadius: vars.radius.full,
   fontSize: vars.fontSize.sm,
   fontWeight: vars.fontWeight.medium,
-  backgroundColor: vars.color.slate100,
-  color: vars.color.slate800,
+  backgroundColor: vars.color.badgeBg,
+  color: vars.color.badgeText,
   transition: 'background-color 0.2s ease-in-out',
   selectors: {
     '&:hover': {
@@ -84,7 +84,7 @@ export const companyCard = style({
   selectors: {
     '&:hover': {
       transform: 'translateY(-4px)',
-      boxShadow: '0 8px 24px rgba(0,0,0,0.08)',
+      boxShadow: vars.shadow.hoverCard,
     },
   },
 });
@@ -116,9 +116,9 @@ export const categoryBadge = style({
   padding: `${vars.spacing.xs} ${vars.spacing.large}`,
   fontSize: vars.fontSize.sm,
   fontWeight: vars.fontWeight.semibold,
-  backgroundColor: vars.color.slate100,
-  color: vars.color.slate800,
-  borderRadius: '9999px',
+  backgroundColor: vars.color.badgeBg,
+  color: vars.color.badgeText,
+  borderRadius: vars.radius.full,
 });
 
 export const companyName = style({
@@ -145,12 +145,12 @@ export const learnMore = style({
   alignItems: 'center',
   fontSize: vars.fontSize.sm,
   fontWeight: vars.fontWeight.medium,
-  color: '#2563eb', // Not in theme
+  color: vars.color.link,
   textDecoration: 'none',
   transition: 'color 0.2s ease-in-out',
   selectors: {
     '&:hover': {
-      color: '#1d4ed8', // Not in theme
+      color: vars.color.linkHover,
     },
   },
 });
