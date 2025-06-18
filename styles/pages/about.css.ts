@@ -3,7 +3,7 @@ import { vars } from '@/styles/tokens/contracts/index.css';
 
 // Layout containers
 export const pageContainer = style({
-  background: vars.color.gray50,
+  background: vars.color.brandRed,
   color: vars.color.text,
   fontFamily: vars.font.body,
 });
@@ -126,7 +126,7 @@ export const linkIcon = style({
 
 // Card styles
 export const card = style({
-  background: vars.color.white,
+  background: vars.color.slate600,
   border: `1px solid ${vars.color.border}`,
   borderRadius: vars.radius.lg,
   padding: vars.spacing.large,
@@ -176,7 +176,7 @@ export const cardText = style({
 
 export const cardCenter = style({
   textAlign: 'center',
-  background: vars.color.white,
+  background: vars.color.slate300,
   border: `1px solid ${vars.color.border}`,
   padding: `${vars.spacing['2xl']} ${vars.spacing.xl}`,
   borderRadius: vars.radius.lg,
@@ -185,7 +185,7 @@ export const cardCenter = style({
 
 // Quote section
 export const quoteBox = style({
-  background: vars.color.slate100,
+  background: vars.color.slate300,
   padding: vars.spacing['2xl'],
   borderRadius: vars.radius.xl,
   marginTop: vars.spacing['2xl'],
@@ -211,3 +211,42 @@ export const iconCircle = style({
   marginBottom: vars.spacing.medium,
   boxShadow: vars.shadow.card,
 });
+
+export const cardWithAvatar = style({
+  display: 'flex',
+  alignItems: 'flex-start',
+  backgroundColor: vars.color.white,
+  border: `1px solid ${vars.color.border}`,
+  borderRadius: vars.radius.lg,
+  boxShadow: vars.shadow.soft,
+  padding: vars.spacing.large,
+  gap: vars.spacing.medium,
+  position: 'relative',
+});
+
+export const avatarWrapper = style({
+  flexShrink: 0,
+  position: 'relative',
+  top: '1.5rem', 
+  left: '0.2rem',
+  width: '64px',
+  height: '64px',
+  borderRadius: '50%',
+  overflow: 'hidden',
+  boxShadow: vars.shadow.card,
+  backgroundColor: vars.color.slate100,
+});
+
+export const avatarImage = style({
+  width: '100%',
+  height: '100%',
+  objectFit: 'cover',
+});
+
+export const cardContent = style({
+  flex: 1,
+  display: 'flex',
+  flexDirection: 'column',
+  gap: vars.spacing.small,
+});
+

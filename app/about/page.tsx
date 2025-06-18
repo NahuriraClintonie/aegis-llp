@@ -14,24 +14,25 @@ const benefits = [
   {
     title: "有限責任の保護",
     description: "パートナーは、事業の負債や義務に対する個人責任から保護されます。",
-    icon: Shield,
+    avatar: "/avatar 1.png",
   },
   {
     title: "柔軟な経営構造",
     description: "官僚的な手続きを減らし、意思決定を簡素化します。",
-    icon: Target,
+    avatar: "/avatar 2.png",
   },
   {
     title: "税制上の効率性",
     description: "パススルー課税により、パートナーシップ収入の二重課税を回避します。",
-    icon: Lightbulb,
+    avatar: "/avatar 3.png",
   },
   {
     title: "専門的な信頼性",
     description: "専門サービス市場において信頼と評判を向上させます。",
-    icon: Users,
+    avatar: "/avatar 4.png",
   },
-]
+];
+
 
 export default function AboutPage() {
   return (
@@ -96,12 +97,14 @@ export default function AboutPage() {
 
           <div className={styles.gridTwoCols}>
             {benefits.map((benefit) => (
-              <div key={benefit.title} className={styles.card}>
-                <div className={styles.cardIconWrapper}>
-                  <benefit.icon className={styles.cardIcon} />
+              <div key={benefit.title} className={styles.cardWithAvatar}>
+                <div className={styles.avatarWrapper}>
+                  <img src={`${benefit.avatar}`} alt={benefit.title} className={styles.avatarImage} />
                 </div>
-                <h3 className={styles.cardTitle}>{benefit.title}</h3>
-                <p className={styles.cardText}>{benefit.description}</p>
+                <div className={styles.cardContent}>
+                  <h3 className={styles.cardTitle}>{benefit.title}</h3>
+                  <p className={styles.cardText}>{benefit.description}</p>
+                </div>
               </div>
             ))}
           </div>
