@@ -1,162 +1,152 @@
 import { style } from '@vanilla-extract/css';
-import { vars } from '@/styles/tokens/contracts/index.css';
 
-// Wrapper for entire page
 export const pageWrapper = style({
   minHeight: '100vh',
-  backgroundColor: vars.color.white,
+  backgroundColor: '#ffffff',
 });
 
-// Hero Section
 export const heroSection = style({
-  backgroundColor: vars.color.slate50,
-  paddingTop: vars.spacing['4xl'],
-  paddingBottom: vars.spacing['4xl'],
+  backgroundColor: '#f8fafc',
+  padding: '4rem 1rem',
 });
 
-export const heroContainer = style({
-  maxWidth: '64rem', // ~1024px
+export const containerCustom = style({
+  maxWidth: '1280px',
+  margin: '0 auto',
+  padding: '0 1rem',
+});
+
+export const heroContent = style({
+  maxWidth: '64rem',
   margin: '0 auto',
   textAlign: 'center',
 });
 
-export const heroHeading = style({
-  fontSize: vars.fontSize['4xl'],
-  fontWeight: vars.fontWeight.bold,
-  color: vars.color.slate900,
-  marginBottom: vars.spacing.large,
+export const heroTitle = style({
+  fontSize: '2.25rem',
+  fontWeight: 'bold',
+  color: '#0f172a',
+  marginBottom: '1.5rem',
 });
 
 export const heroText = style({
-  fontSize: vars.fontSize.xl,
-  color: vars.color.slate600,
+  fontSize: '1.25rem',
+  color: '#475569',
   lineHeight: 1.75,
 });
 
-// Section (grid & filters)
-export const section = style({
-  paddingTop: vars.spacing['4xl'],
-  paddingBottom: vars.spacing['4xl'],
+export const sectionPadding = style({
+  padding: '4rem 1rem',
 });
 
-export const container = style({
-  maxWidth: '80rem', // ~1280px
-  margin: '0 auto',
-  paddingLeft: vars.spacing.large,
-  paddingRight: vars.spacing.large,
-});
-
-// Category Filter Buttons
-export const filterWrapper = style({
+export const categoryButtons = style({
   display: 'flex',
   flexWrap: 'wrap',
   justifyContent: 'center',
-  gap: vars.spacing.medium,
-  marginBottom: vars.spacing['2xl'],
+  gap: '1rem',
+  marginBottom: '3rem',
 });
 
-export const filterButton = style({
-  padding: `${vars.spacing.small} ${vars.spacing.large}`,
-  fontSize: vars.fontSize.sm,
-  fontWeight: vars.fontWeight.medium,
-  color: vars.color.slate700,
-  backgroundColor: vars.color.slate100,
-  borderRadius: '9999px', // full rounded
-  transition: 'background-color 0.2s ease',
+export const categoryButton = style({
+  padding: '0.5rem 1rem',
+  borderRadius: '9999px',
+  fontSize: '0.875rem',
+  fontWeight: 500,
+  backgroundColor: '#f1f5f9',
+  color: '#334155',
+  transition: 'background-color 0.2s ease-in-out',
   selectors: {
     '&:hover': {
-      backgroundColor: vars.color.slate400,
+      backgroundColor: '#e2e8f0',
     },
     '&:focus': {
       outline: 'none',
-      boxShadow: `0 0 0 2px ${vars.color.focusRing}`,
+      boxShadow: '0 0 0 2px #0f172a',
     },
   },
 });
 
-// Companies Grid
-export const grid = style({
+export const companyGrid = style({
   display: 'grid',
-  gridTemplateColumns: '1fr',
-  gap: vars.spacing['2xl'],
-  '@media': {
-    'screen and (min-width: 768px)': {
-      gridTemplateColumns: '1fr 1fr',
-    },
-    'screen and (min-width: 1024px)': {
-      gridTemplateColumns: '1fr 1fr 1fr',
-    },
-  },
+  gap: '2rem',
+  gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
 });
 
-// Company Card
-export const card = style({
-  backgroundColor: vars.color.white,
-  border: `1px solid ${vars.color.border}`,
-  borderRadius: vars.radius.xl,
-  padding: vars.spacing['2xl'],
-  boxShadow: vars.shadow.card,
-  transition: 'border-color 0.3s ease, transform 0.3s ease',
+export const companyCard = style({
+  backgroundColor: '#ffffff',
+  border: '1px solid #e2e8f0',
+  borderRadius: '0.75rem',
+  padding: '1.5rem',
+  transition: 'all 0.3s ease-in-out',
   selectors: {
     '&:hover': {
-      borderColor: vars.color.slate400,
+      borderColor: '#cbd5e1',
     },
   },
 });
 
 export const logoWrapper = style({
-  marginBottom: vars.spacing['2xl'],
+  marginBottom: '1.5rem',
+});
+
+export const companyLogo = style({
+  height: '3rem',
+  width: 'auto',
+  objectFit: 'contain',
+});
+
+export const companyInfo = style({
+  marginBottom: '1rem',
 });
 
 export const categoryBadge = style({
   display: 'inline-block',
-  fontSize: vars.fontSize.sm,
-  fontWeight: vars.fontWeight.medium,
-  color: vars.color.slate700,
-  backgroundColor: vars.color.slate100,
+  padding: '0.25rem 0.75rem',
+  fontSize: '0.75rem',
+  fontWeight: 500,
+  backgroundColor: '#f1f5f9',
+  color: '#334155',
   borderRadius: '9999px',
-  padding: `${vars.spacing.xs} ${vars.spacing.medium}`,
-  marginBottom: vars.spacing.medium,
+  marginBottom: '0.75rem',
 });
 
 export const companyName = style({
-  fontSize: vars.fontSize.xl,
-  fontWeight: vars.fontWeight.semibold,
-  color: vars.color.slate900,
-  marginBottom: vars.spacing.small,
+  fontSize: '1.25rem',
+  fontWeight: 600,
+  color: '#0f172a',
+  marginBottom: '0.5rem',
 });
 
-export const specialty = style({
-  fontSize: vars.fontSize.sm,
-  fontWeight: vars.fontWeight.medium,
-  color: vars.color.slate600,
-  marginBottom: vars.spacing.medium,
+export const companySpecialty = style({
+  color: '#475569',
+  fontWeight: 500,
+  fontSize: '0.875rem',
+  marginBottom: '0.75rem',
 });
 
-export const description = style({
-  fontSize: vars.fontSize.sm,
-  color: vars.color.slate600,
-  lineHeight: 1.75,
-  marginBottom: vars.spacing['2xl'],
+export const companyDescription = style({
+  fontSize: '0.875rem',
+  color: '#475569',
+  lineHeight: 1.6,
+  marginBottom: '1.5rem',
 });
 
-export const learnMoreLink = style({
+export const learnMore = style({
   display: 'inline-flex',
   alignItems: 'center',
-  fontSize: vars.fontSize.sm,
-  fontWeight: vars.fontWeight.medium,
-  color: vars.color.slate900,
-  transition: 'color 0.2s ease, transform 0.2s ease',
+  fontSize: '0.875rem',
+  fontWeight: 500,
+  color: '#0f172a',
+  transition: 'color 0.2s ease-in-out, transform 0.2s ease-in-out',
   selectors: {
     '&:hover': {
-      color: vars.color.slate600,
-      transform: 'translateX(0.25rem)',
+      color: '#475569',
     },
   },
 });
 
 export const arrowIcon = style({
-  width: '1rem',
   height: '1rem',
-  marginLeft: vars.spacing.small,
+  width: '1rem',
+  marginLeft: '0.5rem',
 });

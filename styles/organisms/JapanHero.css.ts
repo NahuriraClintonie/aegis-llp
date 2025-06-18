@@ -3,7 +3,7 @@ import { vars } from '@/styles/tokens/index.css';
 
 export const hero = style({
   display: 'flex',
-  background: '#d4464a', // Not in vars, keep as is
+  background: '#d4464a',
   color: vars.color.white,
   fontFamily: vars.font.body,
   padding: `${vars.spacing['2xl']} 0`,

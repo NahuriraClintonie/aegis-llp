@@ -1,10 +1,9 @@
-// styles/pages/about.css.ts
-import { style, styleVariants } from '@vanilla-extract/css';
+import { style } from '@vanilla-extract/css';
 import { vars } from '@/styles/tokens/contracts/index.css';
 
 // Layout containers
 export const pageContainer = style({
-  background: vars.color.background,
+  background: vars.color.brandRed,
   color: vars.color.text,
   fontFamily: vars.font.body,
 });
@@ -17,7 +16,7 @@ export const container = style({
 
 // Sections
 export const sectionAltBg = style({
-  background: vars.color.slate50,
+  background: vars.color.slate100,
   padding: `${vars.spacing['3xl']} 0`,
 });
 
@@ -34,7 +33,7 @@ export const sectionHeading = style({
   fontSize: vars.fontSize['3xl'],
   fontWeight: vars.fontWeight.bold,
   fontFamily: vars.font.heading,
-  color: vars.color.slate900,
+  color: vars.color.text,
   marginBottom: vars.spacing.medium,
 });
 
@@ -53,7 +52,7 @@ export const heroTitle = style({
   fontSize: vars.fontSize['4xl'],
   fontWeight: vars.fontWeight.bold,
   fontFamily: vars.font.heading,
-  color: vars.color.slate900,
+  color: vars.color.text,
 });
 
 export const heroDescription = style({
@@ -84,6 +83,11 @@ export const gridThreeCols = style({
   gridTemplateColumns: 'repeat(3, 1fr)',
   gap: vars.spacing['2xl'],
   marginTop: vars.spacing['2xl'],
+  '@media': {
+    'screen and (max-width: 768px)': {
+      gridTemplateColumns: '1fr',
+    },
+  },
 });
 
 // Image wrapper
@@ -106,7 +110,7 @@ export const paragraph = style({
 });
 
 export const link = style({
-  color: vars.color.primary,
+  color: vars.color.brandRed,
   fontWeight: vars.fontWeight.medium,
   textDecoration: 'underline',
   display: 'inline-flex',
@@ -122,9 +126,9 @@ export const linkIcon = style({
 
 // Card styles
 export const card = style({
-  background: vars.color.white,
+  background: vars.color.slate600,
   border: `1px solid ${vars.color.border}`,
-  borderRadius: vars.radius.md,
+  borderRadius: vars.radius.lg,
   padding: vars.spacing.large,
   boxShadow: vars.shadow.card,
   transition: 'transform 0.2s ease',
@@ -136,7 +140,7 @@ export const card = style({
 });
 
 export const cardIconWrapper = style({
-  background: vars.color.slate100,
+  background: vars.color.brandRedSoft,
   padding: vars.spacing.small,
   borderRadius: '50%',
   display: 'inline-flex',
@@ -146,22 +150,22 @@ export const cardIconWrapper = style({
 });
 
 export const cardIcon = style({
-  color: vars.color.slate700,
+  color: '#d4464a',
   width: '1.5rem',
   height: '1.5rem',
 });
 
 export const cardIconLarge = style({
-  width: '2rem',
-  height: '2rem',
-  color: vars.color.slate800,
+  width: '2.5rem',
+  height: '2.5rem',
+  color: '#d4464a',
 });
 
 export const cardTitle = style({
   fontSize: vars.fontSize.xl,
   fontWeight: vars.fontWeight.semibold,
   marginTop: vars.spacing.small,
-  color: vars.color.slate900,
+  color: vars.color.text,
 });
 
 export const cardText = style({
@@ -170,14 +174,18 @@ export const cardText = style({
   marginTop: vars.spacing.xs,
 });
 
-// Centered card
 export const cardCenter = style({
   textAlign: 'center',
+  background: vars.color.slate300,
+  border: `1px solid ${vars.color.border}`,
+  padding: `${vars.spacing['2xl']} ${vars.spacing.xl}`,
+  borderRadius: vars.radius.lg,
+  boxShadow: vars.shadow.soft,
 });
 
 // Quote section
 export const quoteBox = style({
-  background: vars.color.slate100,
+  background: vars.color.slate300,
   padding: vars.spacing['2xl'],
   borderRadius: vars.radius.xl,
   marginTop: vars.spacing['2xl'],
@@ -198,9 +206,47 @@ export const iconCircle = style({
   width: '4rem',
   height: '4rem',
   borderRadius: '50%',
-  backgroundColor: vars.color.slate100,
-  color: vars.color.primary,
+  backgroundColor: '#ffe9ea',
+  color: '#d4464a',
   marginBottom: vars.spacing.medium,
   boxShadow: vars.shadow.card,
-})
+});
+
+export const cardWithAvatar = style({
+  display: 'flex',
+  alignItems: 'flex-start',
+  backgroundColor: vars.color.white,
+  border: `1px solid ${vars.color.border}`,
+  borderRadius: vars.radius.lg,
+  boxShadow: vars.shadow.soft,
+  padding: vars.spacing.large,
+  gap: vars.spacing.medium,
+  position: 'relative',
+});
+
+export const avatarWrapper = style({
+  flexShrink: 0,
+  position: 'relative',
+  top: '1.5rem', 
+  left: '0.2rem',
+  width: '64px',
+  height: '64px',
+  borderRadius: '50%',
+  overflow: 'hidden',
+  boxShadow: vars.shadow.card,
+  backgroundColor: vars.color.slate100,
+});
+
+export const avatarImage = style({
+  width: '100%',
+  height: '100%',
+  objectFit: 'cover',
+});
+
+export const cardContent = style({
+  flex: 1,
+  display: 'flex',
+  flexDirection: 'column',
+  gap: vars.spacing.small,
+});
 

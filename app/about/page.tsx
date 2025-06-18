@@ -5,33 +5,34 @@ import { ExternalLink, Shield, Users, Lightbulb, Target } from "lucide-react"
 import * as styles from "@/styles/pages/about.css"
 
 export const metadata: Metadata = {
-  title: "About AEGIS LLP - Limited Liability Partnership Excellence",
+  title: "AEGIS LLPについて - 有限責任事業組合の卓越性",
   description:
-    "Learn about AEGIS LLP, our partnership structure, philosophy, and the benefits of our Limited Liability Partnership model.",
+    "AEGIS LLP、当社のパートナーシップ構造、理念、有限責任事業組合モデルの利点について学びましょう。",
 }
 
 const benefits = [
   {
-    title: "Limited Liability Protection",
-    description: "Partners enjoy protection from personal liability for business debts and obligations.",
-    icon: Shield,
+    title: "有限責任の保護",
+    description: "パートナーは、事業の負債や義務に対する個人責任から保護されます。",
+    avatar: "/avatar 1.png",
   },
   {
-    title: "Flexible Management Structure",
-    description: "Streamlined decision-making with reduced bureaucratic overhead.",
-    icon: Target,
+    title: "柔軟な経営構造",
+    description: "官僚的な手続きを減らし、意思決定を簡素化します。",
+    avatar: "/avatar 2.png",
   },
   {
-    title: "Tax Efficiency",
-    description: "Pass-through taxation eliminates double taxation on partnership income.",
-    icon: Lightbulb,
+    title: "税制上の効率性",
+    description: "パススルー課税により、パートナーシップ収入の二重課税を回避します。",
+    avatar: "/avatar 3.png",
   },
   {
-    title: "Professional Credibility",
-    description: "Enhanced reputation and trust in professional service markets.",
-    icon: Users,
+    title: "専門的な信頼性",
+    description: "専門サービス市場において信頼と評判を向上させます。",
+    avatar: "/avatar 4.png",
   },
-]
+];
+
 
 export default function AboutPage() {
   return (
@@ -40,10 +41,9 @@ export default function AboutPage() {
       <section className={styles.sectionAltBg}>
         <div className={styles.container}>
           <div className={styles.heroTextBox}>
-            <h1 className={styles.heroTitle}>About AEGIS LLP</h1>
+            <h1 className={styles.heroTitle}>AEGIS LLPについて</h1>
             <p className={styles.heroDescription}>
-              Understanding our Limited Liability Partnership structure and the philosophy that drives our collaborative
-              approach to business excellence.
+              当社の有限責任事業組合構造と、ビジネスの卓越性を目指す協調的な理念についてご紹介します。
             </p>
           </div>
         </div>
@@ -54,15 +54,13 @@ export default function AboutPage() {
         <div className={styles.container}>
           <div className={styles.twoColGrid}>
             <div>
-              <h2 className={styles.sectionHeading}>What is a Limited Liability Partnership?</h2>
+              <h2 className={styles.sectionHeading}>有限責任事業組合（LLP）とは？</h2>
               <p className={styles.paragraph}>
-                A Limited Liability Partnership (LLP) is a business structure that combines the flexibility of a
-                partnership with the liability protection of a corporation. This innovative structure allows
-                professional service providers to collaborate while maintaining individual protection.
+                有限責任事業組合（LLP）は、パートナーシップの柔軟性と法人の責任保護を組み合わせたビジネス構造です。
+                この革新的な仕組みにより、専門サービス提供者が個人の保護を保ちながら協力できます。
               </p>
               <p className={styles.paragraph}>
-                In Japan, LLPs provide a framework for businesses to pool resources, share expertise, and pursue joint
-                ventures while maintaining operational independence and limiting personal liability exposure.
+                日本では、LLPは、資源の共有、専門知識の活用、共同事業の推進を可能にしつつ、個々の運営の独立性と責任の制限を実現する枠組みを提供します。
               </p>
               <Link
                 href="https://www.meti.go.jp/english/policy/economy/corporate/llp.html"
@@ -70,16 +68,16 @@ export default function AboutPage() {
                 rel="noopener noreferrer"
                 className={styles.link}
               >
-                Learn more from METI
+                経産省（METI）の詳細を見る
                 <ExternalLink className={styles.linkIcon} />
               </Link>
             </div>
             <div className={styles.imageWrapper}>
               <Image
-                src="/placeholder.svg?height=400&width=600"
-                alt="LLP Structure Diagram"
+                src="/aegis group 6.jpeg"
+                alt="LLP構造図"
                 width={600}
-                height={400}
+                height={500}
                 className={styles.image}
               />
             </div>
@@ -91,20 +89,22 @@ export default function AboutPage() {
       <section className={styles.sectionAltBg}>
         <div className={styles.container}>
           <div className={styles.sectionCenterTextBox}>
-            <h2 className={styles.sectionHeading}>LLP Benefits & Advantages</h2>
+            <h2 className={styles.sectionHeading}>LLPの利点とメリット</h2>
             <p className={styles.subText}>
-              Discover why the Limited Liability Partnership structure is ideal for professional service collaborations.
+              専門サービスでの協働に最適な構造である理由をご覧ください。
             </p>
           </div>
 
           <div className={styles.gridTwoCols}>
             {benefits.map((benefit) => (
-              <div key={benefit.title} className={styles.card}>
-                <div className={styles.cardIconWrapper}>
-                  <benefit.icon className={styles.cardIcon} />
+              <div key={benefit.title} className={styles.cardWithAvatar}>
+                <div className={styles.avatarWrapper}>
+                  <img src={`${benefit.avatar}`} alt={benefit.title} className={styles.avatarImage} />
                 </div>
-                <h3 className={styles.cardTitle}>{benefit.title}</h3>
-                <p className={styles.cardText}>{benefit.description}</p>
+                <div className={styles.cardContent}>
+                  <h3 className={styles.cardTitle}>{benefit.title}</h3>
+                  <p className={styles.cardText}>{benefit.description}</p>
+                </div>
               </div>
             ))}
           </div>
@@ -115,7 +115,7 @@ export default function AboutPage() {
       <section className={styles.sectionPadding}>
         <div className={styles.container}>
           <div className={styles.sectionCenterTextBox}>
-            <h2 className={styles.sectionHeading}>Our Philosophy & Purpose</h2>
+            <h2 className={styles.sectionHeading}>私たちの理念と目的</h2>
           </div>
 
           <div className={styles.gridThreeCols}>
@@ -123,10 +123,9 @@ export default function AboutPage() {
               <div className={styles.iconCircle}>
                 <Shield className={styles.cardIconLarge} />
               </div>
-              <h3 className={styles.cardTitle}>Trust</h3>
+              <h3 className={styles.cardTitle}>信頼</h3>
               <p className={styles.cardText}>
-                Building lasting relationships through transparency, reliability, and unwavering professional
-                integrity.
+                透明性、信頼性、そして揺るぎない専門的誠実さによって、永続的な関係を築きます。
               </p>
             </div>
 
@@ -134,9 +133,9 @@ export default function AboutPage() {
               <div className={styles.iconCircle}>
                 <Lightbulb className={styles.cardIconLarge} />
               </div>
-              <h3 className={styles.cardTitle}>Innovation</h3>
+              <h3 className={styles.cardTitle}>革新</h3>
               <p className={styles.cardText}>
-                Embracing cutting-edge solutions and fostering creative problem-solving across all member companies.
+                最先端のソリューションを取り入れ、すべての加盟企業で創造的な問題解決を推進します。
               </p>
             </div>
 
@@ -144,18 +143,18 @@ export default function AboutPage() {
               <div className={styles.iconCircle}>
                 <Users className={styles.cardIconLarge} />
               </div>
-              <h3 className={styles.cardTitle}>Collaboration</h3>
+              <h3 className={styles.cardTitle}>協力</h3>
               <p className={styles.cardText}>
-                Creating synergies between diverse expertise to achieve collective success and mutual growth.
+                多様な専門性を結集し、共同の成功と相互成長を実現します。
               </p>
             </div>
           </div>
 
           <div className={styles.quoteBox}>
             <p className={styles.quoteText}>
-              "AEGIS LLP was founded on the principle that professional excellence is amplified through strategic
-              collaboration. Our partnership structure enables member companies to maintain their unique identities
-              while benefiting from shared resources, collective expertise, and expanded market opportunities."
+              「AEGIS LLPは、戦略的な協働によって専門性が高められるという原則に基づいて設立されました。
+              私たちのパートナーシップ構造により、加盟企業は独自性を維持しながら、リソースの共有、専門知識の結集、
+              市場機会の拡大という恩恵を享受できます。」
             </p>
           </div>
         </div>
