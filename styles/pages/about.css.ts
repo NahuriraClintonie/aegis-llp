@@ -3,8 +3,8 @@ import { vars } from '@/styles/tokens/contracts/index.css';
 
 // Layout containers
 export const pageContainer = style({
-  background: vars.color.background,
-  color: vars.color.text,
+  background: '#f9f9f9',
+  color: '#1a1a1a',
   fontFamily: vars.font.body,
 });
 
@@ -16,7 +16,7 @@ export const container = style({
 
 // Sections
 export const sectionAltBg = style({
-  background: vars.color.slate50,
+  background: '#f4f4f4',
   padding: `${vars.spacing['3xl']} 0`,
 });
 
@@ -33,13 +33,13 @@ export const sectionHeading = style({
   fontSize: vars.fontSize['3xl'],
   fontWeight: vars.fontWeight.bold,
   fontFamily: vars.font.heading,
-  color: vars.color.slate900,
+  color: '#1a1a1a',
   marginBottom: vars.spacing.medium,
 });
 
 export const subText = style({
   fontSize: vars.fontSize.md,
-  color: vars.color.slate600,
+  color: '#555',
 });
 
 // Hero Section
@@ -52,12 +52,12 @@ export const heroTitle = style({
   fontSize: vars.fontSize['4xl'],
   fontWeight: vars.fontWeight.bold,
   fontFamily: vars.font.heading,
-  color: vars.color.slate900,
+  color: '#1a1a1a',
 });
 
 export const heroDescription = style({
   fontSize: vars.fontSize.lg,
-  color: vars.color.slate600,
+  color: '#666',
   marginTop: vars.spacing.medium,
   maxWidth: '768px',
   marginInline: 'auto',
@@ -83,6 +83,11 @@ export const gridThreeCols = style({
   gridTemplateColumns: 'repeat(3, 1fr)',
   gap: vars.spacing['2xl'],
   marginTop: vars.spacing['2xl'],
+  '@media': {
+    'screen and (max-width: 768px)': {
+      gridTemplateColumns: '1fr',
+    },
+  },
 });
 
 // Image wrapper
@@ -99,13 +104,13 @@ export const image = style({
 // Paragraph & Links
 export const paragraph = style({
   fontSize: vars.fontSize.md,
-  color: vars.color.slate700,
+  color: '#444',
   lineHeight: 1.6,
   marginBottom: vars.spacing.medium,
 });
 
 export const link = style({
-  color: vars.color.primary,
+  color: '#d4464a',
   fontWeight: vars.fontWeight.medium,
   textDecoration: 'underline',
   display: 'inline-flex',
@@ -121,11 +126,11 @@ export const linkIcon = style({
 
 // Card styles
 export const card = style({
-  background: vars.color.white,
-  border: `1px solid ${vars.color.border}`,
-  borderRadius: vars.radius.md,
+  background: '#fff',
+  border: `1px solid #e0e0e0`,
+  borderRadius: '1rem',
   padding: vars.spacing.large,
-  boxShadow: vars.shadow.card,
+  boxShadow: '0 4px 12px rgba(0, 0, 0, 0.05)',
   transition: 'transform 0.2s ease',
   selectors: {
     '&:hover': {
@@ -135,7 +140,7 @@ export const card = style({
 });
 
 export const cardIconWrapper = style({
-  background: vars.color.slate100,
+  background: '#ffe9ea',
   padding: vars.spacing.small,
   borderRadius: '50%',
   display: 'inline-flex',
@@ -145,38 +150,43 @@ export const cardIconWrapper = style({
 });
 
 export const cardIcon = style({
-  color: vars.color.slate700,
+  color: '#d4464a',
   width: '1.5rem',
   height: '1.5rem',
 });
 
 export const cardIconLarge = style({
-  width: '2rem',
-  height: '2rem',
-  color: vars.color.slate800,
+  width: '2.5rem',
+  height: '2.5rem',
+  color: '#d4464a',
 });
 
 export const cardTitle = style({
   fontSize: vars.fontSize.xl,
   fontWeight: vars.fontWeight.semibold,
   marginTop: vars.spacing.small,
-  color: vars.color.slate900,
+  color: '#1a1a1a',
 });
 
 export const cardText = style({
   fontSize: vars.fontSize.md,
-  color: vars.color.slate600,
+  color: '#555',
   marginTop: vars.spacing.xs,
 });
 
 // Centered card
 export const cardCenter = style({
   textAlign: 'center',
+  background: '#fff',
+  border: `1px solid #e0e0e0`,
+  padding: vars.spacing.large,
+  borderRadius: vars.radius.lg,
+  boxShadow: '0 4px 8px rgba(0, 0, 0, 0.04)',
 });
 
 // Quote section
 export const quoteBox = style({
-  background: vars.color.slate100,
+  background: '#f0f0f0',
   padding: vars.spacing['2xl'],
   borderRadius: vars.radius.xl,
   marginTop: vars.spacing['2xl'],
@@ -185,7 +195,7 @@ export const quoteBox = style({
 export const quoteText = style({
   fontStyle: 'italic',
   fontSize: vars.fontSize.lg,
-  color: vars.color.slate600,
+  color: '#666',
   lineHeight: 1.75,
   textAlign: 'center',
 });
@@ -197,9 +207,8 @@ export const iconCircle = style({
   width: '4rem',
   height: '4rem',
   borderRadius: '50%',
-  backgroundColor: vars.color.slate100,
-  color: vars.color.primary,
+  backgroundColor: '#ffe9ea',
+  color: '#d4464a',
   marginBottom: vars.spacing.medium,
-  boxShadow: vars.shadow.card,
-})
-
+  boxShadow: '0 4px 10px rgba(0, 0, 0, 0.05)',
+});
