@@ -73,74 +73,84 @@ export const companyGrid = style({
 });
 
 export const companyCard = style({
+  display: 'flex',
+  flexDirection: 'column',
+  overflow: 'hidden',
   backgroundColor: '#ffffff',
-  border: '1px solid #e2e8f0',
-  borderRadius: '0.75rem',
-  padding: '1.5rem',
-  transition: 'all 0.3s ease-in-out',
+  borderRadius: '1rem',
+  boxShadow: '0 4px 20px rgba(0,0,0,0.06)',
+  transition: 'transform 0.3s ease, box-shadow 0.3s ease',
   selectors: {
     '&:hover': {
-      borderColor: '#cbd5e1',
+      transform: 'translateY(-4px)',
+      boxShadow: '0 8px 24px rgba(0,0,0,0.08)',
     },
   },
 });
 
-export const logoWrapper = style({
-  marginBottom: '1.5rem',
+export const cardImageWrapper = style({
+  position: 'relative',
+  width: '100%',
+  height: '160px',
+  overflow: 'hidden',
+  borderTopLeftRadius: '1rem',
+  borderTopRightRadius: '1rem',
 });
 
-export const companyLogo = style({
-  height: '3rem',
-  width: 'auto',
-  objectFit: 'contain',
+
+export const cardImage = style({
+  objectFit: 'cover',
+  width: '100%',
+  height: '100%',
 });
 
-export const companyInfo = style({
-  marginBottom: '1rem',
+export const cardContent = style({
+  padding: '1.25rem',
+  display: 'flex',
+  flexDirection: 'column',
+  gap: '0.75rem',
 });
 
 export const categoryBadge = style({
-  display: 'inline-block',
-  padding: '0.25rem 0.75rem',
+  alignSelf: 'flex-start',
+  padding: '0.3rem 0.75rem',
   fontSize: '0.75rem',
-  fontWeight: 500,
+  fontWeight: 600,
   backgroundColor: '#f1f5f9',
   color: '#334155',
   borderRadius: '9999px',
-  marginBottom: '0.75rem',
 });
 
 export const companyName = style({
-  fontSize: '1.25rem',
-  fontWeight: 600,
+  fontSize: '1.125rem',
+  fontWeight: 700,
   color: '#0f172a',
-  marginBottom: '0.5rem',
 });
 
 export const companySpecialty = style({
   color: '#475569',
   fontWeight: 500,
   fontSize: '0.875rem',
-  marginBottom: '0.75rem',
 });
 
 export const companyDescription = style({
   fontSize: '0.875rem',
-  color: '#475569',
-  lineHeight: 1.6,
-  marginBottom: '1.5rem',
+  color: '#64748b',
+  lineHeight: 1.5,
 });
 
 export const learnMore = style({
+  marginTop: '0.5rem',
   display: 'inline-flex',
   alignItems: 'center',
   fontSize: '0.875rem',
   fontWeight: 500,
-  color: '#0f172a',
-  transition: 'color 0.2s ease-in-out, transform 0.2s ease-in-out',
+  color: '#2563eb',
+  textDecoration: 'none',
+  transition: 'color 0.2s ease-in-out',
   selectors: {
     '&:hover': {
-      color: '#475569',
+      color: '#1d4ed8',
     },
   },
 });
