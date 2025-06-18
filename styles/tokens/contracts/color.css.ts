@@ -17,4 +17,8 @@ export const colorVars = {
   slate100: null,
   slate50: null,
   gray50: null,
+  brandRed: null,
+  brandRedSoft: null,
+  textDark: null,
+  bgLight: null,
 };

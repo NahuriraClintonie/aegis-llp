@@ -21,6 +21,10 @@ export const defaultTheme = createTheme(vars, {
     slate100: '#f1f5f9',
     slate50: '#f8fafc',
     gray50: '#f8fafc', 
+    brandRed: '#d4464a',
+    brandRedSoft: '#ffe9ea',
+    textDark: '#1a1a1a',
+    bgLight: '#f8fafc',
   },
   spacing: {
     xs: '0.25rem',
@@ -60,5 +64,6 @@ export const defaultTheme = createTheme(vars, {
   },
   shadow: {
     card: '0 4px 14px rgba(0, 0, 0, 0.05)',
+    soft: '0 2px 6px rgba(0, 0, 0, 0.04)',
   },
 });

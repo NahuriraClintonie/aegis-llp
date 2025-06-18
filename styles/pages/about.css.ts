@@ -1,10 +1,10 @@
-import { style, styleVariants } from '@vanilla-extract/css';
+import { style } from '@vanilla-extract/css';
 import { vars } from '@/styles/tokens/contracts/index.css';
 
 // Layout containers
 export const pageContainer = style({
-  background: '#f9f9f9',
-  color: '#1a1a1a',
+  background: vars.color.gray50,
+  color: vars.color.text,
   fontFamily: vars.font.body,
 });
 
@@ -16,7 +16,7 @@ export const container = style({
 
 // Sections
 export const sectionAltBg = style({
-  background: '#f4f4f4',
+  background: vars.color.slate100,
   padding: `${vars.spacing['3xl']} 0`,
 });
 
@@ -33,13 +33,13 @@ export const sectionHeading = style({
   fontSize: vars.fontSize['3xl'],
   fontWeight: vars.fontWeight.bold,
   fontFamily: vars.font.heading,
-  color: '#1a1a1a',
+  color: vars.color.text,
   marginBottom: vars.spacing.medium,
 });
 
 export const subText = style({
   fontSize: vars.fontSize.md,
-  color: '#555',
+  color: vars.color.slate600,
 });
 
 // Hero Section
@@ -52,12 +52,12 @@ export const heroTitle = style({
   fontSize: vars.fontSize['4xl'],
   fontWeight: vars.fontWeight.bold,
   fontFamily: vars.font.heading,
-  color: '#1a1a1a',
+  color: vars.color.text,
 });
 
 export const heroDescription = style({
   fontSize: vars.fontSize.lg,
-  color: '#666',
+  color: vars.color.slate600,
   marginTop: vars.spacing.medium,
   maxWidth: '768px',
   marginInline: 'auto',
@@ -104,13 +104,13 @@ export const image = style({
 // Paragraph & Links
 export const paragraph = style({
   fontSize: vars.fontSize.md,
-  color: '#444',
+  color: vars.color.slate700,
   lineHeight: 1.6,
   marginBottom: vars.spacing.medium,
 });
 
 export const link = style({
-  color: '#d4464a',
+  color: vars.color.brandRed,
   fontWeight: vars.fontWeight.medium,
   textDecoration: 'underline',
   display: 'inline-flex',
@@ -126,11 +126,11 @@ export const linkIcon = style({
 
 // Card styles
 export const card = style({
-  background: '#fff',
-  border: `1px solid #e0e0e0`,
-  borderRadius: '1rem',
+  background: vars.color.white,
+  border: `1px solid ${vars.color.border}`,
+  borderRadius: vars.radius.lg,
   padding: vars.spacing.large,
-  boxShadow: '0 4px 12px rgba(0, 0, 0, 0.05)',
+  boxShadow: vars.shadow.card,
   transition: 'transform 0.2s ease',
   selectors: {
     '&:hover': {
@@ -140,7 +140,7 @@ export const card = style({
 });
 
 export const cardIconWrapper = style({
-  background: '#ffe9ea',
+  background: vars.color.brandRedSoft,
   padding: vars.spacing.small,
   borderRadius: '50%',
   display: 'inline-flex',
@@ -165,28 +165,27 @@ export const cardTitle = style({
   fontSize: vars.fontSize.xl,
   fontWeight: vars.fontWeight.semibold,
   marginTop: vars.spacing.small,
-  color: '#1a1a1a',
+  color: vars.color.text,
 });
 
 export const cardText = style({
   fontSize: vars.fontSize.md,
-  color: '#555',
+  color: vars.color.slate600,
   marginTop: vars.spacing.xs,
 });
 
-// Centered card
 export const cardCenter = style({
   textAlign: 'center',
-  background: '#fff',
-  border: `1px solid #e0e0e0`,
-  padding: vars.spacing.large,
+  background: vars.color.white,
+  border: `1px solid ${vars.color.border}`,
+  padding: `${vars.spacing['2xl']} ${vars.spacing.xl}`,
   borderRadius: vars.radius.lg,
-  boxShadow: '0 4px 8px rgba(0, 0, 0, 0.04)',
+  boxShadow: vars.shadow.soft,
 });
 
 // Quote section
 export const quoteBox = style({
-  background: '#f0f0f0',
+  background: vars.color.slate100,
   padding: vars.spacing['2xl'],
   borderRadius: vars.radius.xl,
   marginTop: vars.spacing['2xl'],
@@ -195,7 +194,7 @@ export const quoteBox = style({
 export const quoteText = style({
   fontStyle: 'italic',
   fontSize: vars.fontSize.lg,
-  color: '#666',
+  color: vars.color.slate600,
   lineHeight: 1.75,
   textAlign: 'center',
 });
@@ -210,5 +209,5 @@ export const iconCircle = style({
   backgroundColor: '#ffe9ea',
   color: '#d4464a',
   marginBottom: vars.spacing.medium,
-  boxShadow: '0 4px 10px rgba(0, 0, 0, 0.05)',
+  boxShadow: vars.shadow.card,
 });
