@@ -1,19 +1,20 @@
 import { style } from '@vanilla-extract/css';
+import { vars } from '@/styles/tokens/contracts/index.css';
 
 export const pageWrapper = style({
   minHeight: '100vh',
-  backgroundColor: '#ffffff',
+  backgroundColor: vars.color.brandRed,
 });
 
 export const heroSection = style({
-  backgroundColor: '#f8fafc',
-  padding: '4rem 1rem',
+  backgroundColor: vars.color.slate300,
+  padding: `${vars.spacing['4xl']} ${vars.spacing.large}`,
 });
 
 export const containerCustom = style({
   maxWidth: '1280px',
   margin: '0 auto',
-  padding: '0 1rem',
+  padding: `0 ${vars.spacing.large}`,
 });
 
 export const heroContent = style({
@@ -23,52 +24,52 @@ export const heroContent = style({
 });
 
 export const heroTitle = style({
-  fontSize: '2.25rem',
-  fontWeight: 'bold',
-  color: '#0f172a',
-  marginBottom: '1.5rem',
+  fontSize: vars.fontSize['4xl'],
+  fontWeight: vars.fontWeight.bold,
+  color: vars.color.slate900,
+  marginBottom: vars.spacing['2xl'],
 });
 
 export const heroText = style({
-  fontSize: '1.25rem',
-  color: '#475569',
+  fontSize: vars.fontSize.xl,
+  color: vars.color.slate600,
   lineHeight: 1.75,
 });
 
 export const sectionPadding = style({
-  padding: '4rem 1rem',
+  padding: `${vars.spacing['4xl']} ${vars.spacing.large}`,
 });
 
 export const categoryButtons = style({
   display: 'flex',
   flexWrap: 'wrap',
   justifyContent: 'center',
-  gap: '1rem',
-  marginBottom: '3rem',
+  gap: vars.spacing.large,
+  marginBottom: vars.spacing['3xl'],
 });
 
 export const categoryButton = style({
-  padding: '0.5rem 1rem',
+  padding: `${vars.spacing.small} ${vars.spacing.large}`,
   borderRadius: '9999px',
-  fontSize: '0.875rem',
-  fontWeight: 500,
-  backgroundColor: '#f1f5f9',
-  color: '#334155',
+  fontSize: vars.fontSize.sm,
+  fontWeight: vars.fontWeight.medium,
+  backgroundColor: vars.color.slate100,
+  color: vars.color.slate800,
   transition: 'background-color 0.2s ease-in-out',
   selectors: {
     '&:hover': {
-      backgroundColor: '#e2e8f0',
+      backgroundColor: vars.color.slate300,
     },
     '&:focus': {
       outline: 'none',
-      boxShadow: '0 0 0 2px #0f172a',
+      boxShadow: `0 0 0 2px ${vars.color.focusRing}`,
     },
   },
 });
 
 export const companyGrid = style({
   display: 'grid',
-  gap: '2rem',
+  gap: vars.spacing['2xl'],
   gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
 });
 
@@ -76,9 +77,9 @@ export const companyCard = style({
   display: 'flex',
   flexDirection: 'column',
   overflow: 'hidden',
-  backgroundColor: '#ffffff',
-  borderRadius: '1rem',
-  boxShadow: '0 4px 20px rgba(0,0,0,0.06)',
+  backgroundColor: vars.color.white,
+  borderRadius: vars.radius.xl,
+  boxShadow: vars.shadow.card,
   transition: 'transform 0.3s ease, box-shadow 0.3s ease',
   selectors: {
     '&:hover': {
@@ -93,10 +94,9 @@ export const cardImageWrapper = style({
   width: '100%',
   height: '160px',
   overflow: 'hidden',
-  borderTopLeftRadius: '1rem',
-  borderTopRightRadius: '1rem',
+  borderTopLeftRadius: vars.radius.xl,
+  borderTopRightRadius: vars.radius.xl,
 });
-
 
 export const cardImage = style({
   objectFit: 'cover',
@@ -105,52 +105,52 @@ export const cardImage = style({
 });
 
 export const cardContent = style({
-  padding: '1.25rem',
+  padding: vars.spacing.xl,
   display: 'flex',
   flexDirection: 'column',
-  gap: '0.75rem',
+  gap: vars.spacing.medium,
 });
 
 export const categoryBadge = style({
   alignSelf: 'flex-start',
-  padding: '0.3rem 0.75rem',
-  fontSize: '0.75rem',
-  fontWeight: 600,
-  backgroundColor: '#f1f5f9',
-  color: '#334155',
+  padding: `${vars.spacing.xs} ${vars.spacing.large}`,
+  fontSize: vars.fontSize.sm,
+  fontWeight: vars.fontWeight.semibold,
+  backgroundColor: vars.color.slate100,
+  color: vars.color.slate800,
   borderRadius: '9999px',
 });
 
 export const companyName = style({
-  fontSize: '1.125rem',
-  fontWeight: 700,
-  color: '#0f172a',
+  fontSize: vars.fontSize.lg,
+  fontWeight: vars.fontWeight.bold,
+  color: vars.color.slate900,
 });
 
 export const companySpecialty = style({
-  color: '#475569',
-  fontWeight: 500,
-  fontSize: '0.875rem',
+  color: vars.color.slate600,
+  fontWeight: vars.fontWeight.medium,
+  fontSize: vars.fontSize.sm,
 });
 
 export const companyDescription = style({
-  fontSize: '0.875rem',
-  color: '#64748b',
+  fontSize: vars.fontSize.sm,
+  color: vars.color.slate500,
   lineHeight: 1.5,
 });
 
 export const learnMore = style({
-  marginTop: '0.5rem',
+  marginTop: vars.spacing.small,
   display: 'inline-flex',
   alignItems: 'center',
-  fontSize: '0.875rem',
-  fontWeight: 500,
-  color: '#2563eb',
+  fontSize: vars.fontSize.sm,
+  fontWeight: vars.fontWeight.medium,
+  color: '#2563eb', // Not in theme
   textDecoration: 'none',
   transition: 'color 0.2s ease-in-out',
   selectors: {
     '&:hover': {
-      color: '#1d4ed8',
+      color: '#1d4ed8', // Not in theme
     },
   },
 });
@@ -158,5 +158,5 @@ export const learnMore = style({
 export const arrowIcon = style({
   height: '1rem',
   width: '1rem',
-  marginLeft: '0.5rem',
+  marginLeft: vars.spacing.small,
 });

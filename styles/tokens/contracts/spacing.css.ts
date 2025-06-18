@@ -9,4 +9,5 @@ export const spacingVars = {
   '4xl': null,
   '5xl': null,
   '6xl': null,
+  '7xl': null,
 };

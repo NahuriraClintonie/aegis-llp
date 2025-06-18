@@ -21,4 +21,11 @@ export const colorVars = {
   brandRedSoft: null,
   textDark: null,
   bgLight: null,
+  blue600: null,
+  blue700: null,
+  hoverCardShadow: null,
+  link: null,
+  linkHover: null,
+  badgeBg: null,
+  badgeText: null,
 };
